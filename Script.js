@@ -39,48 +39,6 @@ navLinks.classList.remove("active");
 });
 
 // ==========================
-// ACTIVE NAVIGATION
-// ==========================
-
-const sections = document.querySelectorAll("section");
-
-window.addEventListener("scroll", () => {
-
-let current = "";
-
-sections.forEach(section => {
-
-const sectionTop = section.offsetTop - 120;
-const sectionHeight = section.offsetHeight;
-
-if (window.scrollY >= sectionTop &&
-window.scrollY < sectionTop + sectionHeight) {
-
-current = section.getAttribute("id");
-
-}
-
-});
-
-document.querySelectorAll(".nav-links a")
-.forEach(link => {
-
-link.classList.remove("active");
-
-if (
-link.getAttribute("href")
-=== `#${current}`
-) {
-
-link.classList.add("active");
-
-}
-
-});
-
-});
-
-// ==========================
 // NAVBAR SHADOW
 // ==========================
 window.addEventListener("scroll", () => {
