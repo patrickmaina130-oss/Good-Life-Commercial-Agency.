@@ -121,6 +121,8 @@ if (entry.isIntersecting) {
 
 entry.target.classList.add("show");
 
+observer.unobserve(entry.target);
+
 }
 
 });
