@@ -447,7 +447,6 @@ font-size:3rem;
 }
 
 }
-
 @media(max-width:768px){
 
 .top-bar{
@@ -488,6 +487,12 @@ padding:20px;
 .contact{
 padding:70px 20px;
 }
+
+}
+
+/* ==========================
+MOBILE MENU ACTIVE
+========================== */
 
   }/* ==========================
 MOBILE MENU ACTIVE
