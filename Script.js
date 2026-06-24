@@ -20,8 +20,8 @@ menuBtn.setAttribute(
 
 "aria-expanded",
 
-navLinks.classList.contains("active")
-
+navLinks.classList.contains("active") ?
+"true" : "false"
 );
 
 });
@@ -46,7 +46,7 @@ if (window.innerWidth <= 768) {
 
 navLinks.classList.remove("active");
   
-menuBtn.setAttribute("aria-expanded", false);
+menuBtn.setAttribute("aria-expanded", "false");
   
 }
 
