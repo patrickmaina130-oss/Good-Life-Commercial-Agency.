@@ -45,7 +45,9 @@ link.addEventListener("click", () => {
 if (window.innerWidth <= 768) {
 
 navLinks.classList.remove("active");
-
+  
+menuBtn.setAttribute("aria-expanded", false);
+  
 }
 
 });
