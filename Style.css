@@ -614,3 +614,41 @@ transform:translateY(0);
 
 }
 
+/* ==========================
+SCROLLED NAVBAR
+========================== */
+
+.navbar.scrolled{
+
+background:#071a35;
+
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+.navbar.scrolled .logo h1{
+
+color:#fff;
+
+}
+
+.navbar.scrolled .nav-links a{
+
+color:#fff;
+
+}
+
+.navbar.scrolled .menu-btn{
+
+color:#fff;
+
+}
+
+.navbar.scrolled .book-btn{
+
+background:#f4b400;
+
+color:#000;
+
+}
+
