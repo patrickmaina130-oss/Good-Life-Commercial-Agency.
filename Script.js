@@ -214,6 +214,8 @@ if (entry.isIntersecting) {
 
 runCounter();
 
+ counterObserver.unobserve(counter); 
+
 }
 
 });
