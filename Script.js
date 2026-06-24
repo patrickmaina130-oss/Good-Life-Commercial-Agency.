@@ -16,7 +16,11 @@ menuBtn.addEventListener("click", () => {
 
 navLinks.classList.toggle("active");
 
-});
+});// ==========================
+// SECTIONS
+// ==========================
+
+const sections = document.querySelectorAll("section");
 
 }
 
