@@ -166,7 +166,7 @@ parseInt(counter.dataset.target);
 
 let count = 0;
 
-const speed = target / 100;
+const speed = Math.max(1, target / 100);
 
 const update = () => {
 
