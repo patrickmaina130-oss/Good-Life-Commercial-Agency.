@@ -55,8 +55,9 @@ menuBtn.setAttribute("aria-expanded", "false");
 });
 
 // ==========================
-// NAVBAR SHADOW
+// ACTIVE NAVIGATION + NAVBAR
 // ==========================
+
 window.addEventListener("scroll", () => {
 
 let current = "";
