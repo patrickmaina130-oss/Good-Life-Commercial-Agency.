@@ -489,4 +489,68 @@ padding:20px;
 padding:70px 20px;
 }
 
-  }
+  }/* ==========================
+MOBILE MENU ACTIVE
+========================== */
+
+@media(max-width:768px){
+
+.nav-links.active{
+
+display:flex;
+
+flex-direction:column;
+
+position:absolute;
+
+top:80px;
+
+left:0;
+
+width:100%;
+
+background:#fff;
+
+padding:20px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+.nav-links.active a{
+
+padding:10px 0;
+
+display:block;
+
+}
+
+}
+
+/* ==========================
+ANIMATIONS
+========================== */
+
+.service-card,
+.destination-card,
+.stat-box{
+
+transition:0.3s ease;
+
+}
+
+.service-card:hover,
+.destination-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.primary-btn:hover,
+.book-btn:hover{
+
+transform:scale(1.05);
+
+transition:0.3s ease;
+
+}
