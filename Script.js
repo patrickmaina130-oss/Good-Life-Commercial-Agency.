@@ -83,20 +83,55 @@ link.classList.add("active");
 // ==========================
 // NAVBAR SHADOW
 // ==========================
-
 window.addEventListener("scroll", () => {
 
-if (window.scrollY > 50) {
+let current = "";
 
-navbar.style.boxShadow =
-"0 10px 30px rgba(0,0,0,.15)";
+sections.forEach(section => {
+
+const sectionTop = section.offsetTop - 120;
+
+const sectionHeight = section.offsetHeight;
+
+if (
+
+window.scrollY >= sectionTop &&
+
+window.scrollY < sectionTop + sectionHeight
+
+) {
+
+current = section.getAttribute("id");
 
 }
 
-else {
+});
 
-navbar.style.boxShadow =
-"0 2px 15px rgba(0,0,0,.1)";
+document.querySelectorAll(".nav-links a")
+
+.forEach(link => {
+
+link.classList.remove("active");
+
+if (link.getAttribute("href") === `#${current}`) {
+
+link.classList.add("active");
+
+}
+
+});
+
+if (navbar) {
+
+if (window.scrollY > 50) {
+
+navbar.classList.add("scrolled");
+
+} else {
+
+navbar.classList.remove("scrolled");
+
+}
 
 }
 
