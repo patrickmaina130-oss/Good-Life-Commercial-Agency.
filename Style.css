@@ -1,0 +1,490 @@
+/* ==========================
+RESET
+========================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+line-height:1.6;
+overflow-x:hidden;
+background:#f7f9fc;
+color:#222;
+}
+
+/* ==========================
+TOP BAR
+========================== */
+
+.top-bar{
+background:#071a35;
+color:#fff;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 40px;
+font-size:14px;
+flex-wrap:wrap;
+}
+
+.top-left,
+.top-right{
+display:flex;
+gap:20px;
+align-items:center;
+}
+
+.top-right a{
+color:#fff;
+font-size:18px;
+text-decoration:none;
+}
+
+.top-right a:hover{
+color:#f4b400;
+}
+
+/* ==========================
+NAVBAR
+========================== */
+
+.navbar{
+position:sticky;
+top:0;
+z-index:1000;
+background:#fff;
+height:80px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 40px;
+box-shadow:0 2px 15px rgba(0,0,0,0.1);
+}
+
+.logo h1{
+font-size:28px;
+font-weight:800;
+}
+
+.logo span{
+display:block;
+font-size:11px;
+letter-spacing:2px;
+color:#f4b400;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#222;
+font-weight:600;
+}
+
+.nav-links a:hover{
+color:#0a84ff;
+}
+
+.book-btn{
+padding:12px 24px;
+background:#f4b400;
+color:#000;
+border-radius:30px;
+text-decoration:none;
+font-weight:700;
+}
+
+.menu-btn{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+/* ==========================
+HERO
+========================== */
+
+.hero{
+min-height:90vh;
+
+background:
+linear-gradient(rgba(0,0,0,.45),
+rgba(0,0,0,.45)),
+
+url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=1600");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:50px;
+}
+
+.hero-content{
+max-width:800px;
+}
+
+.hero h1{
+font-size:4rem;
+color:#fff;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.3rem;
+color:#fff;
+margin-bottom:35px;
+}
+
+.primary-btn{
+display:inline-block;
+padding:15px 35px;
+background:#f4b400;
+color:#000;
+text-decoration:none;
+border-radius:35px;
+font-weight:700;
+}
+
+/* ==========================
+SECTION TITLES
+========================== */
+
+section h2{
+text-align:center;
+font-size:2.5rem;
+margin-bottom:40px;
+}
+
+/* ==========================
+SERVICES
+========================== */
+
+.services{
+padding:80px 40px;
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.service-card{
+background:#fff;
+padding:30px;
+text-align:center;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.service-card i{
+font-size:45px;
+color:#0a84ff;
+margin-bottom:15px;
+}
+
+/* ==========================
+ABOUT
+========================== */
+
+.about{
+padding:100px 40px;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:50px;
+
+align-items:center;
+}
+
+.about h5{
+color:#0a84ff;
+margin-bottom:10px;
+}
+
+.about h2{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.about p{
+margin-bottom:20px;
+}
+
+.about ul{
+list-style:none;
+}
+
+.about li{
+margin-bottom:10px;
+}
+
+.about-image img{
+width:100%;
+border-radius:20px;
+}
+
+/* ==========================
+DESTINATIONS
+========================== */
+
+.destinations{
+padding:100px 40px;
+}
+
+.destinations-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.destination-card{
+background:#fff;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.destination-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.destination-card h3{
+padding:20px 20px 10px;
+}
+
+.destination-card p{
+padding:0 20px 20px;
+}
+
+/* ==========================
+STATS
+========================== */
+
+.stats{
+padding:100px 40px;
+background:#071a35;
+color:#fff;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+}
+
+.stat-box{
+text-align:center;
+}
+
+.stat-box h3{
+font-size:3rem;
+color:#f4b400;
+}
+
+/* ==========================
+BOOKING
+========================== */
+
+.booking{
+padding:100px 40px;
+}
+
+.booking-form{
+max-width:700px;
+margin:auto;
+
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea{
+
+padding:15px;
+
+border:1px solid #ccc;
+
+border-radius:10px;
+
+font-size:16px;
+}
+
+.booking-form textarea{
+height:140px;
+}
+
+.booking-form button{
+
+padding:15px;
+
+background:#0a84ff;
+
+color:#fff;
+
+border:none;
+
+border-radius:10px;
+
+font-size:18px;
+
+cursor:pointer;
+}
+
+/* ==========================
+CONTACT
+========================== */
+
+.contact{
+padding:100px 40px;
+text-align:center;
+}
+
+.contact p{
+font-size:18px;
+margin:15px 0;
+}
+
+/* ==========================
+MAP
+========================== */
+
+.map iframe{
+width:100%;
+height:450px;
+border:none;
+}
+
+/* ==========================
+FOOTER
+========================== */
+
+footer{
+background:#071a35;
+color:#fff;
+text-align:center;
+padding:50px 20px;
+}
+
+footer h3{
+margin-bottom:15px;
+}
+
+/* ==========================
+WHATSAPP
+========================== */
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+
+width:60px;
+height:60px;
+
+background:#25d366;
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+color:#fff;
+
+font-size:30px;
+
+text-decoration:none;
+
+z-index:999;
+}
+
+/* ==========================
+RESPONSIVE
+========================== */
+
+@media(max-width:992px){
+
+.services-grid,
+.destinations-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.stats-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+}
+
+@media(max-width:768px){
+
+.top-bar{
+display:none;
+}
+
+.nav-links{
+display:none;
+}
+
+.menu-btn{
+display:block;
+}
+
+.services-grid,
+.destinations-grid,
+.stats-grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:2.2rem;
+}
+
+.navbar{
+padding:0 20px;
+}
+
+.hero{
+padding:20px;
+}
+
+.about,
+.services,
+.destinations,
+.stats,
+.booking,
+.contact{
+padding:70px 20px;
+}
+
+  }
