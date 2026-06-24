@@ -16,6 +16,14 @@ menuBtn.addEventListener("click", () => {
 
 navLinks.classList.toggle("active");
 
+menuBtn.setAttribute(
+
+"aria-expanded",
+
+navLinks.classList.contains("active")
+
+);
+
 });
   
 }
