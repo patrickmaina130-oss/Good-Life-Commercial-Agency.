@@ -16,13 +16,15 @@ menuBtn.addEventListener("click", () => {
 
 navLinks.classList.toggle("active");
 
-});// ==========================
+});
+  
+}
+
+// ==========================
 // SECTIONS
 // ==========================
 
 const sections = document.querySelectorAll("section");
-
-}
 
 // ==========================
 // CLOSE MOBILE MENU
