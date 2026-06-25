@@ -1314,3 +1314,58 @@ font-size:1rem;
 }
 
 }
+/* TOURISM SCROLLING GALLERY */
+
+.tourism-gallery-wrapper{
+display:flex;
+align-items:center;
+gap:15px;
+margin-top:30px;
+}
+
+.tourism-gallery{
+display:flex;
+gap:20px;
+overflow-x:auto;
+scroll-behavior:smooth;
+flex:1;
+padding:10px;
+}
+
+.tourism-gallery::-webkit-scrollbar{
+display:none;
+}
+
+.tourism-gallery img{
+width:350px;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+flex-shrink:0;
+box-shadow:0 5px 20px rgba(0,0,0,.15);
+transition:.3s;
+}
+
+.tourism-gallery img:hover{
+transform:scale(1.03);
+}
+
+.tour-arrow{
+width:50px;
+height:50px;
+border:none;
+border-radius:50%;
+font-size:20px;
+cursor:pointer;
+background:#071a35;
+color:#fff;
+}
+
+@media(max-width:768px){
+
+.tourism-gallery img{
+width:280px;
+height:200px;
+}
+
+}
