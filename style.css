@@ -1369,3 +1369,63 @@ height:200px;
 }
 
 }
+/* ==========================
+PORTFOLIO GALLERIES
+========================== */
+
+.portfolio{
+padding:80px 5%;
+background:#f8f9fc;
+}
+
+.portfolio h2{
+text-align:center;
+margin-bottom:50px;
+}
+
+.gallery-category{
+margin-bottom:50px;
+}
+
+.gallery-title{
+margin-bottom:15px;
+}
+
+.gallery-title h3{
+color:#071a35;
+}
+
+.gallery-scroll{
+display:flex;
+gap:20px;
+overflow-x:auto;
+scroll-behavior:smooth;
+padding-bottom:15px;
+}
+
+.gallery-scroll::-webkit-scrollbar{
+height:8px;
+}
+
+.gallery-scroll img{
+width:320px;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+flex-shrink:0;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+transition:.3s;
+}
+
+.gallery-scroll img:hover{
+transform:scale(1.03);
+}
+
+@media(max-width:768px){
+
+.gallery-scroll img{
+width:260px;
+height:180px;
+}
+
+}
