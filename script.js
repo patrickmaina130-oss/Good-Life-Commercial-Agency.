@@ -402,3 +402,11 @@ showSlide(currentSlide);
 }
 
 setInterval(nextSlide, 5000);
+function scrollTourism(direction){
+
+const gallery =
+document.getElementById("tourismGallery");
+
+gallery.scrollLeft += direction * 370;
+
+}
