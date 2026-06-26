@@ -435,7 +435,7 @@ const search=prompt("Search our website:");
 
 if(search){
 
-window.find(search);
+alert("Search feature will be connected after Firebase integration.");
 
 }
 
