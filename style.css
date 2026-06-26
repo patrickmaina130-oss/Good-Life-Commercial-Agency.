@@ -1,0 +1,746 @@
+/* =========================
+RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f7f9fc;
+  color: #1c1c1c;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* =========================
+GLOBAL CONTAINER FIX
+========================= */
+
+section {
+  padding: 80px 8%;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header span {
+  color: #1e90ff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+
+.section-header h2 {
+  font-size: 32px;
+  margin-top: 10px;
+}
+
+.section-header p {
+  max-width: 700px;
+  margin: 10px auto 0;
+  color: #555;
+}
+
+/* =========================
+WELCOME / TOP BAR
+========================= */
+
+.welcome-bar {
+  background: #071a35;
+  color: white;
+  padding: 10px 0;
+  overflow: hidden;
+  font-size: 13px;
+}
+
+.welcome-track {
+  white-space: nowrap;
+  display: inline-block;
+  animation: scrollText 20s linear infinite;
+  padding-left: 100%;
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* =========================
+NAVBAR
+========================= */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8%;
+}
+
+.logo h2 {
+  font-size: 20px;
+  color: #1e90ff;
+}
+
+.logo span {
+  font-size: 11px;
+  display: block;
+  color: #555;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #1e90ff;
+}
+
+/* =========================
+HERO SECTIONS
+========================= */
+
+.page-hero {
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+              url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600") center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 120px 8%;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* =========================
+BUTTONS
+========================= */
+
+.primary-btn,
+.book-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  background: #1e90ff;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.primary-btn:hover,
+.book-btn:hover {
+  background: #0d6efd;
+  transform: translateY(-2px);
+}
+
+/* =========================
+GRID BASE (used everywhere)
+========================= */
+
+.grid-2,
+.jobs-grid,
+.hotels-grid,
+.projects-grid,
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* =========================
+CARDS BASE STYLE
+========================= */
+
+.card,
+.job-card,
+.hotel-card,
+.project-card,
+.service-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.card:hover,
+.job-card:hover,
+.hotel-card:hover,
+.project-card:hover,
+.service-card:hover {
+  transform: translateY(-6px);
+}
+
+/* =========================
+INFO BOXES
+========================= */
+
+.info-box {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  background: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.info-box i {
+  color: #1e90ff;
+  font-size: 18px;
+}
+
+/* =========================
+FLOATING WHATSAPP
+========================= */
+
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  font-size: 22px;
+  padding: 14px;
+  border-radius: 50%;
+  z-index: 999;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* =========================
+BACK TO TOP
+========================= */
+
+.back-to-top {
+  position: fixed;
+  bottom: 90px;
+  right: 22px;
+  background: #1e90ff;
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 50%;
+  display: none;
+  cursor: pointer;
+  }
+
+/* =========================
+HORIZONTAL GALLERY SYSTEM
+========================= */
+
+.gallery-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.gallery-scroll {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 5px;
+}
+
+.gallery-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-card {
+  min-width: 220px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  flex-shrink: 0;
+  transition: 0.3s;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.gallery-card h3 {
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* arrows */
+.gallery-arrow {
+  background: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* =========================
+JOB CARDS
+========================= */
+
+.job-card {
+  padding: 20px;
+}
+
+.job-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.job-type {
+  font-size: 12px;
+  background: #e7f1ff;
+  color: #1e90ff;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.job-location {
+  font-size: 13px;
+  color: #777;
+  margin: 5px 0;
+}
+
+.job-desc {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.job-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* =========================
+HOTEL CARDS
+========================= */
+
+.hotel-image {
+  position: relative;
+}
+
+.hotel-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.hotel-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #1e90ff;
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+}
+
+.hotel-content {
+  padding: 15px;
+}
+
+.hotel-rating {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.hotel-desc {
+  font-size: 13px;
+  color: #555;
+  margin: 10px 0;
+}
+
+.hotel-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.hotel-price h4 {
+  font-size: 15px;
+}
+
+/* =========================
+PROJECT / COMMUNITY CARDS
+========================= */
+
+.project-image img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 15px;
+}
+
+.project-content p {
+  font-size: 13px;
+  color: #555;
+  margin: 8px 0;
+}
+
+/* =========================
+SERVICES CARDS
+========================= */
+
+.service-card {
+  padding: 25px;
+  text-align: center;
+}
+
+.service-card i {
+  font-size: 30px;
+  color: #1e90ff;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 13px;
+  color: #555;
+  margin: 10px 0;
+}
+
+/* =========================
+FORMS (ALL PAGES)
+========================= */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+form input,
+form select,
+form textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #1e90ff;
+}
+
+/* =========================
+WHY SECTIONS (ALL PAGES)
+========================= */
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.why-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+.why-card i {
+  font-size: 26px;
+  color: #1e90ff;
+  margin-bottom: 10px;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer {
+  background: #071a35;
+  color: white;
+  padding: 60px 8%;
+  margin-top: 60px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.footer h3 {
+  margin-bottom: 10px;
+}
+
+.footer p,
+.footer a {
+  font-size: 13px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+  font-size: 13px;
+}
+
+.footer-social a {
+  margin-right: 10px;
+  font-size: 16px;
+  }
+
+/* =========================
+SMOOTH ANIMATIONS
+========================= */
+
+.card,
+.job-card,
+.hotel-card,
+.project-card,
+.service-card,
+.gallery-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover,
+.job-card:hover,
+.hotel-card:hover,
+.project-card:hover,
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* =========================
+SCROLL ANIMATIONS (OPTIONAL USE WITH JS)
+========================= */
+
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+RESPONSIVE DESIGN (TABLET)
+========================= */
+
+@media (max-width: 992px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  section {
+    padding: 60px 6%;
+  }
+}
+
+/* =========================
+RESPONSIVE DESIGN (MOBILE)
+========================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hero-content h1 {
+    font-size: 26px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  section {
+    padding: 50px 5%;
+  }
+
+  .gallery-card {
+    min-width: 180px;
+  }
+
+  .hotel-price {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .job-details {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .info-box {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* =========================
+SMALL MOBILE FIX (VERY SMALL SCREENS)
+========================= */
+
+@media (max-width: 480px) {
+
+  .hero-content h1 {
+    font-size: 22px;
+  }
+
+  .primary-btn,
+  .book-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .gallery-card {
+    min-width: 160px;
+  }
+
+  .section-header h2 {
+    font-size: 24px;
+  }
+}
+
+/* =========================
+HORIZONTAL SCROLL IMPROVEMENTS
+========================= */
+
+.gallery-scroll {
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+
+.gallery-card {
+  scroll-snap-align: start;
+}
+
+/* =========================
+NAV FIX ON SCROLL (ENHANCED LOOK)
+========================= */
+
+.header.scrolled {
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+/* =========================
+BUTTON TOUCH IMPROVEMENTS (MOBILE)
+========================= */
+
+button,
+.primary-btn,
+.book-btn {
+  min-height: 44px;
+}
+
+/* =========================
+FINAL CLEANUP
+========================= */
+
+img {
+  max-width: 100%;
+  display: block;
+    }
