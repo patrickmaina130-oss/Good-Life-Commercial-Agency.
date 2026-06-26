@@ -379,7 +379,7 @@ btn.addEventListener("click",()=>{
 
 if(btn.textContent.includes("WhatsApp")||
 
-btn.textContent.includes("Book")){
+if(btn.textContent.includes("whatsApp")){
 
 window.open(
 
