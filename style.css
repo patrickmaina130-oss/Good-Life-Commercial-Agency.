@@ -1575,3 +1575,39 @@ html{
 scroll-behavior:smooth;
 
   }
+
+.header.sticky {
+    background: rgba(8,20,32,0.95);
+    backdrop-filter: blur(20px);
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #0ea85f;
+    color: white;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.scroll-top.show {
+    display: flex;
+}
