@@ -319,17 +319,17 @@ revealElements.forEach(el=>{
 // AUTO HERO DESTINATION SLIDER
 // =========================
 
-const heroImages=[
+const heroImages = [
 
-"images/maasai-mara.jpg",
+    "images/destinations/maasai-mara.jpg",
 
-"images/amboseli.jpg",
+    "images/destinations/amboseli.jpg",
 
-"images/diani.jpg",
+    "images/destinations/diani.jpg",
 
-"images/watamu.jpg",
+    "images/destinations/watamu.jpg",
 
-"images/tsavo.jpg"
+    "images/destinations/tsavo.jpg"
 
 ];
 
