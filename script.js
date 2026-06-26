@@ -335,7 +335,10 @@ let heroIndex=0;
 
 if(heroImg){
 
+heroImg.style.transition = "opacity .4s ease";
+
 setInterval(()=>{
+    
 
 heroIndex++;
 
