@@ -744,3 +744,30 @@ img {
   max-width: 100%;
   display: block;
     }
+.horizontal-grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.horizontal-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-card {
+  min-width: 260px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 15px;
+  transition: 0.3s;
+}
+
+.horizontal-card:hover {
+  transform: translateY(-5px);
+}
