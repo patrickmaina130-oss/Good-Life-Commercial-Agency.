@@ -261,11 +261,13 @@ if (statsSection) {
 
         entries.forEach(entry => {
 
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && !counterStarted) {
 
-                startCounters();
+    counterStarted = true;
 
-                observer.disconnect();
+    startCounters();
+
+    observer.disconnect();
 
             }
 
