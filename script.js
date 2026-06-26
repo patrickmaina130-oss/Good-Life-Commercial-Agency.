@@ -373,27 +373,25 @@ window.open(img.src,"_blank");
 // WHATSAPP BOOKING
 // =========================
 
-document.querySelectorAll(".btn-primary").forEach(btn=>{
+document.querySelectorAll(".btn-primary").forEach(btn => {
 
-btn.addEventListener("click",()=>{
+    btn.addEventListener("click", () => {
 
-if(btn.textContent.includes("WhatsApp")||
+        const text = btn.textContent.toLowerCase();
 
-if(btn.textContent.includes("whatsApp")){
+        if (text.includes("whatsapp")) {
 
-window.open(
+            window.open(
+                "https://wa.me/254705365075?text=Hello%20Good%20Life%20Commercial%20Agencies.%20I%20would%20like%20to%20make%20a%20booking.",
+                "_blank"
+            );
 
-"https://wa.me/254705365075?text=Hello%20Good%20Life%20Commercial%20Agencies.%20I%20would%20like%20to%20make%20a%20booking.",
+        }
 
-"_blank"
-
-);
-
-}
-
-});
+    });
 
 });
+
 
 // =========================
 // CONTACT FORM
