@@ -107,7 +107,7 @@ window.addEventListener("scroll", () => {
 
         const sectionHeight = section.clientHeight;
 
-        if (pageYOffset >= sectionTop) {
+        if (window.scrollY >= sectionTop) {
 
             current = section.getAttribute("id");
 
