@@ -15,19 +15,23 @@ const navLinks = document.querySelector(".nav-links");
 // STICKY HEADER
 // =========================
 
-window.addEventListener("scroll", () => {
+if (header) {
 
-    if (window.scrollY > 80) {
+    window.addEventListener("scroll", () => {
 
-        header.classList.add("sticky");
+        if (window.scrollY > 80) {
 
-    } else {
+            header.classList.add("sticky");
 
-        header.classList.remove("sticky");
+        } else {
 
-    }
+            header.classList.remove("sticky");
 
-});
+        }
+
+    });
+
+}
 
 // =========================
 // MOBILE MENU
