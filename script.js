@@ -203,6 +203,8 @@ const counters = document.querySelectorAll(".stat-card h2");
 
 const speed = 80;
 
+let counterStarted = false;
+
 const startCounters = () => {
 
     counters.forEach(counter => {
