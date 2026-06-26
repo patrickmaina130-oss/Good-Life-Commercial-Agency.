@@ -605,7 +605,6 @@ FLOATING BUTTONS
   }
 
 /*==================================================
-STYLE.CSS PART 2
 Services • Destinations • Community • Statistics
 ==================================================*/
 
@@ -1020,7 +1019,6 @@ STATISTICS
 }
 
 /*==================================================
-STYLE.CSS PART 3
 Gallery • Testimonials • Booking • Contact
 Footer • Responsive
 ==================================================*/
@@ -1156,7 +1154,7 @@ BOOKING
     padding:100px 5%;
 
     background:linear-gradient(rgba(8,20,32,.88),rgba(8,20,32,.88)),
-    url("../images/booking-bg.jpg") center/cover;
+    url("images/booking-bg.jpg") center/cover;
 
     text-align:center;
 
