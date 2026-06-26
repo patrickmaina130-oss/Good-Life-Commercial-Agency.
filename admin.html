@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | Good Life Agencies</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+/* =========================
+LAYOUT
+========================= */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f4f6f9;
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* =========================
+SIDEBAR
+========================= */
+
+.sidebar {
+  width: 260px;
+  background: #071a35;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+  display: block;
+  color: #ccc;
+  padding: 12px;
+  text-decoration: none;
+  margin-bottom: 5px;
+  border-radius: 6px;
+}
+
+.sidebar a:hover {
+  background: #1e90ff;
+  color: white;
+}
+
+/* =========================
+MAIN
+========================= */
+
+.main {
+  flex: 1;
+  padding: 25px;
+}
+
+/* =========================
+CARDS
+========================= */
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* =========================
+INPUTS
+========================= */
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+/* =========================
+BUTTON
+========================= */
+
+button {
+  background: #1e90ff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0d6efd;
+}
+
+/* =========================
+SECTION TITLE
+========================= */
+
+.section-title {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<h2>GOOD LIFE ADMIN</h2>
+
+<a href="#jobs"><i class="fas fa-briefcase"></i> Jobs</a>
+<a href="#hotels"><i class="fas fa-hotel"></i> Hotels</a>
+<a href="#tours"><i class="fas fa-map"></i> Tours</a>
+<a href="#requests"><i class="fas fa-bell"></i> Requests</a>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<h1>Dashboard</h1>
+<p>Manage all your agency content in one place.</p>
+
+<!-- =========================
+JOBS
+========================= -->
+
+<div class="card" id="jobs">
+
+<h3 class="section-title">Add Job</h3>
+
+<input id="jobTitle" placeholder="Job Title">
+<input id="jobLocation" placeholder="Location">
+<input id="jobSalary" placeholder="Salary (KSh / USD)">
+<textarea id="jobDesc" placeholder="Description"></textarea>
+
+<button onclick="addJob()">Add Job</button>
+
+</div>
+
+<!-- =========================
+HOTELS
+========================= -->
+
+<div class="card" id="hotels">
+
+<h3 class="section-title">Add Hotel</h3>
+
+<input id="hotelName" placeholder="Hotel Name">
+<input id="hotelPrice" placeholder="Price per Night">
+<input id="hotelImage" placeholder="Image URL (CDN)">
+<textarea id="hotelDesc" placeholder="Description"></textarea>
+
+<button onclick="addHotel()">Add Hotel</button>
+
+</div>
+
+<!-- =========================
+TOURS
+========================= -->
+
+<div class="card" id="tours">
+
+<h3 class="section-title">Add Tour</h3>
+
+<input id="tourName" placeholder="Tour Name">
+<input id="tourPrice" placeholder="Price">
+<input id="tourImage" placeholder="Image URL">
+<textarea id="tourDesc" placeholder="Description"></textarea>
+
+<button onclick="addTour()">Add Tour</button>
+
+</div>
+
+<!-- =========================
+REQUESTS
+========================= -->
+
+<div class="card" id="requests">
+
+<h3 class="section-title">User Requests</h3>
+
+<p>All WhatsApp requests will appear here in future Firebase upgrade.</p>
+
+</div>
+
+</div>
+</div>
+
+<!-- =========================
+FIREBASE (ADD LATER)
+========================= -->
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+
+<script>
+
+// FIREBASE INIT (PUT YOUR CONFIG HERE)
+const firebaseConfig = {
+  apiKey: "YOUR_KEY",
+  authDomain: "YOUR_DOMAIN",
+  projectId: "YOUR_ID"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const db = firebase.firestore();
+const storage = firebase.storage();
+
+/* =========================
+ADD JOB
+========================= */
+function addJob() {
+
+db.collection("jobs").add({
+title: jobTitle.value,
+location: jobLocation.value,
+salary: jobSalary.value,
+description: jobDesc.value,
+createdAt: new Date()
+});
+
+alert("Job Added!");
+}
+
+/* =========================
+ADD HOTEL
+========================= */
+function addHotel() {
+
+db.collection("hotels").add({
+name: hotelName.value,
+price: hotelPrice.value,
+image: hotelImage.value,
+description: hotelDesc.value,
+createdAt: new Date()
+});
+
+alert("Hotel Added!");
+}
+
+/* =========================
+ADD TOUR
+========================= */
+function addTour() {
+
+db.collection("tours").add({
+name: tourName.value,
+price: tourPrice.value,
+image: tourImage.value,
+description: tourDesc.value,
+createdAt: new Date()
+});
+
+alert("Tour Added!");
+}
+
+</script>
+
+</body>
+</html>
