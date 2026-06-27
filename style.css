@@ -2603,3 +2603,5 @@ SCROLL TO TOP BUTTON
 .scroll-top:hover{
     transform:translateY(-5px);
 }
+
+header.classList.add("sticky");
