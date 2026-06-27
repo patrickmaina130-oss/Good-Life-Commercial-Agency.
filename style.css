@@ -2641,3 +2641,21 @@ BUTTON RIPPLE EFFECT
 
 }
 
+/*====================================
+IMAGE FADE-IN
+====================================*/
+
+img{
+
+    opacity:0;
+
+    transition:opacity .6s ease;
+
+}
+
+img.loaded{
+
+    opacity:1;
+
+}
+
