@@ -269,8 +269,16 @@ if (heroSlider) {
             currentHeroImage++;
 
             if (currentHeroImage >= heroImages.length) {
+    currentHeroImage = 0;
+}
 
-                currentHeroImage = 0;,
+heroSlider.src = heroImages[currentHeroImage];
+heroSlider.style.opacity = "1";
+
+}, 700);
+
+}, 5000);
+    
 // ======================================================
 // GOOD LIFE COMMERCIAL AGENCIES
 // Production Script.js V2.0
