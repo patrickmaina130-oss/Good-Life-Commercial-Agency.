@@ -270,7 +270,8 @@ if (heroSlider) {
 
             if (currentHeroImage >= heroImages.length) {
 
-                currentHeroImage =// ======================================================
+                currentHeroImage = 0;,
+// ======================================================
 // GOOD LIFE COMMERCIAL AGENCIES
 // Production Script.js V2.0
 // PART 3 — Premium UI Effects
