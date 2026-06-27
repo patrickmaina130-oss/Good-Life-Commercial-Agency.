@@ -279,6 +279,8 @@ heroSlider.style.opacity = "1";
 
 }, 5000);
     
+} 
+
 // ======================================================
 // GOOD LIFE COMMERCIAL AGENCIES
 // Production Script.js V2.0
