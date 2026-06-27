@@ -2605,3 +2605,39 @@ SCROLL TO TOP BUTTON
 }
 
 header.classList.add("sticky");
+
+/*====================================
+BUTTON RIPPLE EFFECT
+====================================*/
+
+.ripple{
+
+    position:absolute;
+
+    width:20px;
+    height:20px;
+
+    background:rgba(255,255,255,.6);
+
+    border-radius:50%;
+
+    transform:translate(-50%,-50%) scale(0);
+
+    animation:ripple .6s linear;
+
+    pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+    to{
+
+        transform:translate(-50%,-50%) scale(18);
+
+        opacity:0;
+
+    }
+
+}
+
