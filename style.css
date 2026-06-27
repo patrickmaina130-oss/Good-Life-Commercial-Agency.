@@ -429,6 +429,18 @@ HEADER
 
 }
 
+/* Sticky Header */
+
+.header.sticky{
+
+    background: rgba(8,20,32,.98);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.35);
+
+}
+
 .navbar{
 
     width:min(1280px,92%);
