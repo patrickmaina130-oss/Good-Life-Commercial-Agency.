@@ -260,6 +260,8 @@ if (heroSlider) {
 
     heroSlider.style.transition = "opacity .7s ease";
 
+    heroSlider.src = heroImages[0];
+    
     setInterval(() => {
 
         heroSlider.style.opacity = "0";
