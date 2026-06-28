@@ -69,36 +69,49 @@ TOP BAR
 ==================================*/
 
 .top-bar{
-
     background: var(--dark);
     color: var(--white);
     font-size: 14px;
     padding: 10px 0;
-
 }
 
 .top-bar .container{
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:10px;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
 }
 
 .top-left,
 .top-right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-
+.top-left span,
+.top-right span{
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .top-bar i{
-
     color: var(--secondary);
-    margin-right:6px;
+}
+
+/*========== Mobile ==========*/
+
+@media (max-width:768px){
+
+    .top-bar .container{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .top-left{
+        flex-direction: column;
+        gap: 8px;
+    }
 
 }
