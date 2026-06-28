@@ -63,3 +63,42 @@ img{
     padding:0 20px;
 
 }
+
+/*==================================
+TOP BAR
+==================================*/
+
+.top-bar{
+
+    background: var(--dark);
+    color: var(--white);
+    font-size: 14px;
+    padding: 10px 0;
+
+}
+
+.top-bar .container{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+
+}
+
+.top-left,
+.top-right{
+
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+
+}
+
+.top-bar i{
+
+    color: var(--secondary);
+    margin-right:6px;
+
+}
