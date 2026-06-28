@@ -627,6 +627,41 @@ NAV ACTIONS
 
       }
 
+/*==============================
+MOBILE NAVIGATION
+==============================*/
+
+.menu-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.nav-links{
+    position:fixed;
+    top:127px;
+    left:-100%;
+    width:100%;
+    height:calc(100vh - 127px);
+    background:#081420;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    gap:30px;
+    padding:40px 0;
+    transition:left .35s ease;
+    z-index:998;
+}
+
+.nav-links.active{
+    left:0;
+}
+
+.nav-links a{
+    font-size:20px;
+    font-weight:600;
+}
+
 /*==================================================
 STYLE.CSS - PART 2
 PREMIUM HERO SECTION
@@ -2452,8 +2487,12 @@ RESPONSIVE
 grid-template-columns:1fr;
 }
 
-.nav-links{
-display:none;
+    .nav-links{
+display:flex;
+}
+
+.menu-btn{
+display:flex;
 }
 
 .booking-content h2,
@@ -2603,8 +2642,6 @@ SCROLL TO TOP BUTTON
 .scroll-top:hover{
     transform:translateY(-5px);
 }
-
-header.classList.add("sticky");
 
 /*====================================
 BUTTON RIPPLE EFFECT
