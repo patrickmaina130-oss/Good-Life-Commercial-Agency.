@@ -26,15 +26,15 @@ CSS VARIABLES
     --success:#22c55e;
     --danger:#ef4444;
 
-    --shadow:0 12px 35px rgba(0,0,0,.25);
-    --shadow-lg:0 20px 45px rgba(0,0,0,.35);
+    --shadow:0 5px 35px rgba(0,0,0,.15);
+    --shadow-lg:0 10px 25px rgba(0,0,0,.25);
 
-    --radius:16px;
-    --radius-sm:8px;
+    --radius:6px;
+    --radius-sm:4px;
 
-    --transition:.35s ease;
+    --transition:.15s ease;
 
-    --container:1280px;
+    --container:1100px;
 
 }
 
@@ -58,14 +58,14 @@ body{
     background:var(--dark);
     color:var(--white);
     overflow-x:hidden;
-    line-height:1.7;
+    line-height:1.2;
 
 }
 
 img{
 
     display:block;
-    width:100%;
+    width:50%;
 
 }
 
@@ -93,13 +93,13 @@ ul{
 
 section{
 
-    padding:100px 8%;
+    padding:50px 4%;
 
 }
 
 .container{
 
-    width:min(100%,var(--container));
+    width:min(50%,var(--container));
     margin:auto;
 
 }
@@ -117,7 +117,7 @@ SCROLLBAR
 ::-webkit-scrollbar-thumb{
 
     background:var(--primary);
-    border-radius:20px;
+    border-radius:10px;
 
 }
 
@@ -133,23 +133,23 @@ GLOBAL HEADINGS
 
 h1{
 
-    font-size:4rem;
+    font-size:2rem;
     line-height:1.1;
-    font-weight:800;
+    font-weight:200;
 
 }
 
 h2{
 
     font-size:2.5rem;
-    font-weight:700;
+    font-weight:200;
 
 }
 
 h3{
 
     font-size:1.4rem;
-    font-weight:600;
+    font-weight:200;
 
 }
 
@@ -173,7 +173,7 @@ SECTION TITLE
 .section-title span{
 
     color:var(--secondary);
-    font-weight:700;
+    font-weight:200;
     letter-spacing:2px;
 
 }
@@ -186,7 +186,7 @@ SECTION TITLE
 
 .section-title p{
 
-    max-width:760px;
+    max-width:160px;
     margin:auto;
 
 }
@@ -232,7 +232,7 @@ BUTTONS
 
     border:1px solid #ffffff25;
 
-    backdrop-filter:blur(8px);
+    backdrop-filter:blur(4px);
 
 }
 
@@ -258,16 +258,16 @@ FLOATING CONTACT PANEL
 
     position:fixed;
 
-    left:20px;
-    top:50%;
+    left:10px;
+    top:20%;
 
     transform:translateY(-50%);
 
-    z-index:1000;
+    z-index:200;
 
     display:flex;
     flex-direction:column;
-    gap:12px;
+    gap:6px;
 
 }
 
@@ -277,13 +277,13 @@ FLOATING CONTACT PANEL
 
     align-items:center;
 
-    gap:10px;
+    gap:5px;
 
     background:#102238;
 
-    padding:12px 18px;
+    padding:6px 9px;
 
-    border-radius:40px;
+    border-radius:20px;
 
     transition:.3s;
 
@@ -295,7 +295,7 @@ FLOATING CONTACT PANEL
 
     background:var(--primary);
 
-    transform:translateX(8px);
+    transform:translateX(4px);
 
 }
 
@@ -307,8 +307,8 @@ SOCIAL SIDEBAR
 
     position:fixed;
 
-    right:20px;
-    top:50%;
+    right:10px;
+    top:20%;
 
     transform:translateY(-50%);
 
@@ -318,14 +318,14 @@ SOCIAL SIDEBAR
 
     gap:15px;
 
-    z-index:1000;
+    z-index:200;
 
 }
 
 .social-sidebar a{
 
-    width:48px;
-    height:48px;
+    width:28px;
+    height:18px;
 
     display:grid;
     place-items:center;
@@ -365,7 +365,7 @@ PREMIUM BAR
 
     overflow:hidden;
 
-    z-index:1001;
+    z-index:201;
 
     height:42px;
 
@@ -377,7 +377,7 @@ PREMIUM BAR
 
     align-items:center;
 
-    gap:80px;
+    gap:20px;
 
     height:100%;
 
@@ -435,7 +435,7 @@ HEADER
 
     background: rgba(8,20,32,.98);
 
-    backdrop-filter: blur(18px);
+    backdrop-filter: blur(10px);
 
     box-shadow: 0 8px 25px rgba(0,0,0,.35);
 
@@ -443,7 +443,7 @@ HEADER
 
 .navbar{
 
-    width:min(1280px,92%);
+    width:min(180px,92%);
 
     margin:auto;
 
@@ -473,8 +473,8 @@ LOGO
 
 .logo-circle{
 
-    width:60px;
-    height:60px;
+    width:10px;
+    height:10px;
 
     border-radius:50%;
 
@@ -489,13 +489,13 @@ LOGO
 
 .logo-circle img{
 
-    width:42px;
+    width:22px;
 
 }
 
 .logo-text h2{
 
-    font-size:24px;
+    font-size:22px;
 
     margin-bottom:2px;
 
@@ -503,7 +503,7 @@ LOGO
 
 .logo-text p{
 
-    font-size:13px;
+    font-size:10px;
 
     color:#ddd;
 
@@ -517,7 +517,7 @@ NAVIGATION
 
     display:flex;
 
-    gap:30px;
+    gap:20px;
 
 }
 
@@ -525,7 +525,7 @@ NAVIGATION
 
     position:relative;
 
-    font-weight:500;
+    font-weight:50;
 
     transition:.3s;
 
@@ -577,9 +577,9 @@ NAV ACTIONS
 
 .menu-btn{
 
-    width:45px;
+    width:25px;
 
-    height:45px;
+    height:25px;
 
     border-radius:50%;
 
@@ -599,11 +599,11 @@ NAV ACTIONS
 
     gap:8px;
 
-    padding:12px 22px;
+    padding:10px 12px;
 
-    border-radius:40px;
+    border-radius:20px;
 
-    font-weight:600;
+    font-weight:60;
 
 }
 
@@ -647,8 +647,8 @@ MOBILE NAVIGATION
     flex-direction:column;
     justify-content:flex-start;
     align-items:center;
-    gap:30px;
-    padding:40px 0;
+    gap:10px;
+    padding:20px 0;
     transition:left .35s ease;
     z-index:998;
 }
@@ -658,8 +658,8 @@ MOBILE NAVIGATION
 }
 
 .nav-links a{
-    font-size:20px;
-    font-weight:600;
+    font-size:10px;
+    font-weight:610;
 }
 
 /*==================================================
@@ -677,7 +677,7 @@ HERO SECTION
     display:flex;
     align-items:center;
     overflow:hidden;
-    padding:160px 8% 100px;
+    padding:16px 8% 10px;
     background:#081420;
 }
 
@@ -713,32 +713,32 @@ ANIMATED BLURS
 .hero-blur{
     position:absolute;
     border-radius:50%;
-    filter:blur(80px);
+    filter:blur(40px);
     opacity:.35;
     z-index:2;
 }
 
 .hero-blur-1{
-    width:320px;
-    height:320px;
+    width:20px;
+    height:20px;
     background:#0d6efd;
     top:8%;
-    left:-80px;
+    left:-20px;
     animation:floatOne 10s ease-in-out infinite;
 }
 
 .hero-blur-2{
-    width:260px;
-    height:260px;
+    width:26px;
+    height:26px;
     background:#ffc107;
-    right:-80px;
+    right:-8,20px;
     bottom:10%;
     animation:floatTwo 12s ease-in-out infinite;
 }
 
 .hero-blur-3{
-    width:180px;
-    height:180px;
+    width:18px;
+    height:18px;
     background:#25d366;
     top:50%;
     left:45%;
@@ -782,8 +782,8 @@ LEFT CONTENT
 
 .hero-left h1{
     font-size:4rem;
-    font-weight:800;
-    margin:20px 0;
+    font-weight:80;
+    margin:10px 0;
     line-height:1.1;
 }
 
@@ -822,7 +822,7 @@ BADGE
 
     backdrop-filter:blur(12px);
 
-    font-weight:600;
+    font-weight:60;
 }
 
 .hero-badge i{
@@ -847,9 +847,9 @@ SERVICE CHIPS
     align-items:center;
     gap:8px;
 
-    padding:10px 18px;
+    padding:10px 8px;
 
-    border-radius:30px;
+    border-radius:10px;
 
     background:#ffffff10;
 
@@ -879,8 +879,8 @@ BUTTONS
 
     display:flex;
     flex-wrap:wrap;
-    gap:18px;
-    margin:35px 0;
+    gap:8px;
+    margin:25px 0;
 
 }
 
@@ -894,9 +894,9 @@ TRUST COUNTERS
 
     grid-template-columns:repeat(4,1fr);
 
-    gap:20px;
+    gap:10px;
 
-    margin-top:45px;
+    margin-top:15px;
 
 }
 
