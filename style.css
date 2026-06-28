@@ -1,149 +1,201 @@
-/*==================================
-  RESET
-==================================*/
+/*================================
+HEADER
+================================*/
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+.brand-header{
 
-/*==================================
-  ROOT VARIABLES
-==================================*/
-
-:root{
-
-    --primary:#0D6EFD;
-    --secondary:#FFC107;
-    --dark:#08142B;
-    --light:#F8F9FA;
-    --white:#FFFFFF;
-    --text:#6C757D;
+    background:#071a35;
 
 }
 
-/*==================================
-  BODY
-==================================*/
+.company-name{
 
-body{
-
-    font-family:'Poppins',sans-serif;
-    background:var(--white);
-    color:#222;
-    line-height:1.6;
-    overflow-x:hidden;
-
-}
-
-img{
-
-    max-width:100%;
-    display:block;
-
-}
-
-{
-
-    text-decoration:none;
-    color:inherit;
-
-}
-
-/*==================================
-  CONTAINER
-==================================*/
-
-.container{
-
-    width:100%;
-    max-width:1320px;
-    margin:auto;
-    padding:0 20px;
-
-}
-
-/*==================================
-TOP BAR
-==================================*/
-
-.top-bar{
-    background:#08142b;
     color:#fff;
-    font-size:13px;
-    overflow:hidden;
+
+    text-align:center;
+
+    font-size:36px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    padding:20px;
+
+    border-bottom:3px solid #ffc107;
+
 }
 
-.top-bar .container{
-    display:flex;
-    flex-direction:column;
-}
+.ticker{
 
-.top-contact{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:12px;
-    padding:8px 15px;
-}
-
-.top-contact span{
-    display:flex;
-    align-items:center;
-    gap:6px;
-}
-
-.top-contact i{
-    color:#ffc107;
-}
-
-.top-news{
     background:#0d6efd;
+
     overflow:hidden;
+
     white-space:nowrap;
+
+    height:55px;
+
+    display:flex;
+
+    align-items:center;
+
 }
 
-.top-news p{
+.ticker-content{
+
     display:inline-block;
-    padding:8px 0;
-    animation:marquee 18s linear infinite;
-    font-size:13px;
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    padding-left:100%;
+
+    animation:ticker 30s linear infinite;
+
 }
 
-.top-news strong{
-    color:#ffc107;
-}
-
-@keyframes marquee{
+@keyframes ticker{
 
     from{
-        transform:translateX(100%);
+
+        transform:translateX(-100%);
+
     }
 
     to{
-        transform:translateX(-100%);
+
+        transform:translateX(100%);
+
     }
 
 }
 
-/*========== Mobile ==========*/
+/*================================
+NAVIGATION
+================================*/
 
-@media(min-width:768px){
+.navbar{
 
-.top-bar .container{
-    flex-direction:row;
-    justify-content:space-between;
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    background:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
     align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:25px;
+
+    padding:18px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+
+    transition:.3s;
+
 }
 
-.top-contact{
-    justify-content:flex-start;
+.navbar.scrolled{
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
 }
 
-.top-news{
-    flex:1;
-    margin-left:20px;
+.navbar a{
+
+    color:#071a35;
+
+    text-decoration:none;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.navbar a:hover{
+
+    color:#ffc107;
+
+}
+
+.book-btn{
+
+    background:#ffc107;
+
+    color:#071a35 !important;
+
+    padding:12px 28px;
+
+    border-radius:30px;
+
+    font-weight:700;
+
+}
+
+.book-btn:hover{
+
+    background:#071a35;
+
+    color:#fff !important;
+
+}
+
+/*==============================
+RESPONSIVE
+==============================*/
+
+@media(max-width:768px){
+
+.company-name{
+
+    font-size:24px;
+
+}
+
+.ticker{
+
+    height:50px;
+
+}
+
+.ticker-content{
+
+    font-size:16px;
+
+}
+
+.navbar{
+
+    gap:12px;
+
+    padding:15px;
+
+}
+
+.navbar a{
+
+    font-size:15px;
+
+}
+
+.book-btn{
+
+    padding:10px 20px;
+
 }
 
 }
