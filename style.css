@@ -7,3 +7,59 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/*==================================
+  ROOT VARIABLES
+==================================*/
+
+:root{
+
+    --primary:#0D6EFD;
+    --secondary:#FFC107;
+    --dark:#08142B;
+    --light:#F8F9FA;
+    --white:#FFFFFF;
+    --text:#6C757D;
+
+}
+
+/*==================================
+  BODY
+==================================*/
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:var(--white);
+    color:#222;
+    line-height:1.6;
+    overflow-x:hidden;
+
+}
+
+img{
+
+    max-width:100%;
+    display:block;
+
+}
+
+{
+
+    text-decoration:none;
+    color:inherit;
+
+}
+
+/*==================================
+  CONTAINER
+==================================*/
+
+.container{
+
+    width:100%;
+    max-width:1320px;
+    margin:auto;
+    padding:0 20px;
+
+}
