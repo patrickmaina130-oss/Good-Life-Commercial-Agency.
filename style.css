@@ -30,7 +30,7 @@ TOP BAR
 
     font-weight:600;
 
-    animation:topMove 25s linear infinite;
+    animation:topMove 15s linear infinite;
 }
 
 .join-btn{
