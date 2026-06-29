@@ -660,6 +660,20 @@ transform:scale(1);
 
 }
 
+.services-slider{
+
+    scroll-behavior:smooth;
+
+    scrollbar-width:none;
+
+}
+
+.services-slider::-webkit-scrollbar{
+
+    display:none;
+
+}
+
 /*==================================================
 SECTION 6 - HERO
 ==================================================*/
