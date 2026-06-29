@@ -191,3 +191,95 @@ if (aboutImage) {
     });
 
 }
+
+/*==================================================
+GOOD LIFE COMMERCIAL AGENCIES
+SCRIPT.JS
+PART 3
+TOURS • REAL ESTATE • JOBS
+==================================================*/
+
+"use strict";
+
+/*==================================================
+REVEAL SECTIONS ON SCROLL
+==================================================*/
+
+const cards = document.querySelectorAll(
+    ".tours .service-card, .real-estate .service-card, .jobs .service-card"
+);
+
+const revealCards = () => {
+
+    const triggerPoint = window.innerHeight * 0.85;
+
+    cards.forEach(card => {
+
+        const cardTop = card.getBoundingClientRect().top;
+
+        if (cardTop < triggerPoint) {
+
+            card.classList.add("fade-up");
+
+        }
+
+    });
+
+};
+
+window.addEventListener("scroll", revealCards);
+window.addEventListener("load", revealCards);
+
+/*==================================================
+BOOK TOUR BUTTON
+==================================================*/
+
+document.querySelectorAll(".tours .btn").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        console.log("Tour booking button clicked.");
+
+    });
+
+});
+
+/*==================================================
+CARD HOVER EFFECT
+==================================================*/
+
+cards.forEach(card => {
+
+    card.addEventListener("mouseenter", () => {
+
+        card.style.transform = "translateY(-10px)";
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform = "translateY(0)";
+
+    });
+
+});
+
+/*==================================================
+IMAGE ZOOM EFFECT
+==================================================*/
+
+document.querySelectorAll(".tours .service-card img").forEach(image => {
+
+    image.addEventListener("mouseenter", () => {
+
+        image.style.transform = "scale(1.05)";
+
+    });
+
+    image.addEventListener("mouseleave", () => {
+
+        image.style.transform = "scale(1)";
+
+    });
+
+});
