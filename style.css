@@ -1,0 +1,154 @@
+/*==================================================
+GOOD LIFE COMMERCIAL AGENCIES
+STYLE.CSS
+VERSION 2.0
+==================================================*/
+
+
+/*==================================================
+SECTION 1 - RESET & GLOBAL STYLES
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#ffffff;
+
+    color:#222;
+
+    overflow-x:hidden;
+
+    line-height:1.6;
+
+}
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+button{
+
+    font-family:inherit;
+
+    cursor:pointer;
+
+    border:none;
+
+}
+
+section{
+
+    padding:80px 20px;
+
+}
+
+.container{
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+  }
+
+/*==================================================
+SECTION 2 - CSS VARIABLES
+==================================================*/
+
+:root{
+
+    /* Brand Colours */
+
+    --primary:#2563EB;
+
+    --secondary:#FFC107;
+
+    --success:#25D366;
+
+    --dark:#081C3A;
+
+    --light:#F8F9FB;
+
+    --white:#FFFFFF;
+
+    --text:#555555;
+
+    /* Shadows */
+
+    --shadow:0 8px 25px rgba(0,0,0,.08);
+
+    --shadow-hover:0 18px 40px rgba(0,0,0,.18);
+
+    /* Border Radius */
+
+    --radius:16px;
+
+    /* Transition */
+
+    --transition:.35s ease;
+
+}
+
+/*==================================================
+SECTION 3 - TYPOGRAPHY
+==================================================*/
+
+h1{
+
+    font-size:clamp(2.4rem,5vw,4.4rem);
+
+    font-weight:800;
+
+}
+
+h2{
+
+    font-size:clamp(2rem,4vw,3rem);
+
+    font-weight:700;
+
+}
+
+h3{
+
+    font-size:1.3rem;
+
+    font-weight:700;
+
+}
+
+p{
+
+    color:var(--text);
+
+    font-size:16px;
+
+}
