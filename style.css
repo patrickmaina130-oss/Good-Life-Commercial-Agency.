@@ -68,3 +68,90 @@ transform:translateX(-100%);
 }
 
     }
+
+.main-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:rgba(5,15,35,.92);
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:45px;
+    z-index:999;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:60px;
+}
+
+.logo-text h2{
+    color:#FFC107;
+    margin:0;
+    font-size:32px;
+    font-weight:800;
+}
+
+.logo-text span{
+    color:#fff;
+    font-size:13px;
+}
+
+nav ul{
+    display:flex;
+    gap:28px;
+    list-style:none;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover,
+.active a{
+    color:#FFC107;
+}
+
+.header-actions{
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
+
+.search-btn,
+.menu-btn{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:2px solid #fff;
+    background:transparent;
+    color:#fff;
+    cursor:pointer;
+}
+
+.dashboard-btn{
+    background:#2563EB;
+    color:#fff;
+    border:none;
+    padding:12px 22px;
+    border-radius:10px;
+    font-weight:600;
+}
+
+.book-btn{
+    background:#FFC107;
+    color:#000;
+    border:none;
+    padding:12px 22px;
+    border-radius:10px;
+    font-weight:700;
+}
