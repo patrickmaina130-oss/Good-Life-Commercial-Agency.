@@ -95,4 +95,72 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let current = 0;
 
+    /*==========================================
+  HERO SLIDER FUNCTIONALITY
+==========================================*/
+
+// Function to update hero content
+function updateHero() {
+
+    const destination = destinations[current];
+
+    if (heroImage) heroImage.src = destination.image;
+    if (heroName) heroName.textContent = destination.name;
+    if (heroCountry) heroCountry.textContent = destination.country;
+    if (heroPrice) heroPrice.textContent = destination.price;
+
+}
+
+// Initialize first slide
+updateHero();
+
+/*==========================================
+  AUTO SLIDER (ROTATION)
+==========================================*/
+
+function nextDestination() {
+
+    current++;
+
+    if (current >= destinations.length) {
+        current = 0;
+    }
+
+    updateHero();
+
+}
+
+function prevDestination() {
+
+    current--;
+
+    if (current < 0) {
+        current = destinations.length - 1;
+    }
+
+    updateHero();
+
+}
+
+// Auto rotate every 5 seconds
+let heroInterval = setInterval(nextDestination, 5000);
+
+/*==========================================
+  PAUSE ON HOVER (OPTIONAL BUT CLEAN UX)
+==========================================*/
+
+const heroSection = document.querySelector(".hero");
+
+if (heroSection) {
+
+    heroSection.addEventListener("mouseenter", () => {
+        clearInterval(heroInterval);
+    });
+
+    heroSection.addEventListener("mouseleave", () => {
+        heroInterval = setInterval(nextDestination, 5000);
+    });
+
+}
+
                           
