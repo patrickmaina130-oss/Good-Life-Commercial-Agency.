@@ -550,6 +550,18 @@ SECTION 5 - PREMIUM SERVICES
 
     font-weight:700;
 
+    transition:.35s;
+
+    animation:pulseBook 2s infinite;
+
+}
+
+.book-service:hover{
+
+    background:#FFB300;
+
+    transform:scale(1.06);
+
 }
 
 .learn-service{
@@ -567,6 +579,16 @@ SECTION 5 - PREMIUM SERVICES
     border-radius:10px;
 
     font-weight:700;
+
+    transition:.35s;
+
+}
+
+.learn-service:hover{
+
+    background:#0D47A1;
+
+    transform:translateY(-2px);
 
 }
 
@@ -929,3 +951,5 @@ nav{
 }
 
 }
+
+    
