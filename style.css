@@ -580,6 +580,85 @@ height:190px;
 
 }
 
+/* Featured Ribbon */
+
+.featured{
+
+position:absolute;
+
+top:15px;
+
+left:-35px;
+
+background:#E53935;
+
+color:#fff;
+
+padding:8px 45px;
+
+font-size:12px;
+
+font-weight:700;
+
+transform:rotate(-45deg);
+
+z-index:5;
+
+letter-spacing:1px;
+
+}
+
+/* Price */
+
+.price{
+
+margin-top:10px;
+
+font-size:15px;
+
+color:#555;
+
+}
+
+.price strong{
+
+color:#2563EB;
+
+font-size:20px;
+
+}
+
+/* Book Button Animation */
+
+.book-service{
+
+animation:pulseBook 2s infinite;
+
+}
+
+@keyframes pulseBook{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.05);
+
+box-shadow:0 0 18px rgba(255,193,7,.6);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
 
 /*==================================================
 SECTION 6 - HERO
