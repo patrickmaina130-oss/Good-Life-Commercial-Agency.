@@ -353,3 +353,105 @@ SECTION 3 - HERO
 }
 
 }
+/*====================================
+SECTION 4 - FLOATING BUTTONS
+====================================*/
+
+.floating-left,
+.floating-right{
+    position:fixed;
+    top:50%;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    z-index:1000;
+}
+
+.floating-left{
+    left:12px;
+}
+
+.floating-right{
+    right:12px;
+}
+
+.float-btn,
+.social-btn{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    box-shadow:0 6px 16px rgba(0,0,0,.25);
+    transition:.3s;
+}
+
+.float-btn:hover,
+.social-btn:hover{
+    transform:scale(1.1);
+}
+
+/* Left buttons */
+.call{
+    background:#2563EB;
+}
+
+.whatsapp{
+    background:#25D366;
+}
+
+.email{
+    background:#FF9800;
+}
+
+.location{
+    background:#E53935;
+}
+
+/* Right buttons */
+.facebook{
+    background:#1877F2;
+}
+
+.instagram{
+    background:#E4405F;
+}
+
+.tiktok{
+    background:#000;
+}
+
+.youtube{
+    background:#FF0000;
+}
+
+.linkedin{
+    background:#0A66C2;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+.float-btn,
+.social-btn{
+    width:40px;
+    height:40px;
+    font-size:16px;
+}
+
+.floating-left{
+    left:8px;
+}
+
+.floating-right{
+    right:8px;
+}
+
+}
+
