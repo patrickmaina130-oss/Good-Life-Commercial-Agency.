@@ -110,3 +110,84 @@ window.addEventListener("load", () => {
     console.log("Good Life Commercial Agencies loaded successfully.");
 
 });
+
+/*==================================================
+SCRIPT.JS
+PART 2
+SCROLL ANIMATIONS
+==================================================*/
+
+/*==================================================
+REVEAL ELEMENTS
+==================================================*/
+
+const revealElements = document.querySelectorAll(
+    ".about-content, .service-card, .features .service-card"
+);
+
+const revealOnScroll = () => {
+
+    const triggerBottom = window.innerHeight * 0.85;
+
+    revealElements.forEach(element => {
+
+        const elementTop = element.getBoundingClientRect().top;
+
+        if (elementTop < triggerBottom) {
+
+            element.classList.add("fade-up");
+
+        }
+
+    });
+
+};
+
+window.addEventListener("scroll", revealOnScroll);
+
+window.addEventListener("load", revealOnScroll);
+
+/*==================================================
+SERVICE CARD HOVER EFFECT
+==================================================*/
+
+const serviceCards = document.querySelectorAll(".service-card");
+
+serviceCards.forEach(card => {
+
+    card.addEventListener("mouseenter", () => {
+
+        card.style.transform = "translateY(-10px)";
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform = "translateY(0)";
+
+    });
+
+});
+
+/*==================================================
+ABOUT IMAGE EFFECT
+==================================================*/
+
+const aboutImage = document.querySelector(".about-image img");
+
+if (aboutImage) {
+
+    aboutImage.addEventListener("mouseenter", () => {
+
+        aboutImage.style.transform = "scale(1.03)";
+        aboutImage.style.transition = ".4s ease";
+
+    });
+
+    aboutImage.addEventListener("mouseleave", () => {
+
+        aboutImage.style.transform = "scale(1)";
+
+    });
+
+}
