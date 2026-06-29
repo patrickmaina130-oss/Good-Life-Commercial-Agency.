@@ -1,71 +1,57 @@
-/* TOP BAR */
-.top-bar{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 55px;
-    background: #08130f;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 15px;
-    z-index: 999;
-    border-bottom: 2px solid gold;
+.welcome-bar{
+    width:100%;
+    overflow:hidden;
+    background:#081c15;
+    padding:10px 0;
 }
 
-/* LOGO */
-.logo-area .logo-text{
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: gold;
-    color: black;
-    font-weight: 800;
-    border-radius: 50%;
-    font-size: 18px;
+.welcome-text{
+    display:inline-flex;
+    align-items:center;
+    gap:30px;
+    white-space:nowrap;
+    animation:scrollText 18s linear infinite;
+
+    background:linear-gradient(90deg,#ff0000,#ff9800,#ffee00,#00ff66,#00bfff,#8a2be2);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    font-size:18px;
+    font-weight:700;
 }
 
-/* MARQUEE TEXT */
-.marquee{
-    flex: 1;
-    overflow: hidden;
-    white-space: nowrap;
-    margin: 0 15px;
+.booking-btn{
+    background:#ffcc00;
+    color:#000 !important;
+    padding:8px 18px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    -webkit-text-fill-color:#000;
+    animation:blink 1s infinite;
 }
 
-.marquee-content{
-    display: inline-block;
-    padding-left: 100%;
-    animation: scroll-left 15s linear infinite;
-    font-size: 14px;
-    color: white;
-    font-weight: 500;
+.booking-btn:hover{
+    background:#00c853;
+    color:#fff !important;
 }
 
-@keyframes scroll-left{
-    0%{
-        transform: translateX(0%);
+@keyframes blink{
+    0%,100%{
+        opacity:1;
+        transform:scale(1);
     }
-    100%{
-        transform: translateX(-100%);
+    50%{
+        opacity:.4;
+        transform:scale(1.12);
     }
 }
 
-/* CONTACT BUTTON */
-.top-actions a{
-    background: gold;
-    color: black;
-    padding: 6px 12px;
-    font-size: 13px;
-    font-weight: 600;
-    border-radius: 20px;
-    text-decoration: none;
-}
-
-/* BODY SHIFT (IMPORTANT so content not hidden) */
-body{
-    padding-top: 55px;
+@keyframes scrollText{
+    from{
+        transform:translateX(100%);
+    }
+    to{
+        transform:translateX(-100%);
+    }
 }
