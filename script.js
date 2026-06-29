@@ -283,3 +283,105 @@ document.querySelectorAll(".tours .service-card img").forEach(image => {
     });
 
 });
+
+/*==================================================
+GOOD LIFE COMMERCIAL AGENCIES
+SCRIPT.JS
+PART 4
+CONTACT • BACK TO TOP
+==================================================*/
+
+"use strict";
+
+/*==================================================
+BACK TO TOP BUTTON
+==================================================*/
+
+const backToTop = document.querySelector(".back-to-top");
+
+window.addEventListener("scroll", () => {
+
+    if (!backToTop) return;
+
+    if (window.scrollY > 400) {
+
+        backToTop.classList.add("show");
+
+    } else {
+
+        backToTop.classList.remove("show");
+
+    }
+
+});
+
+if (backToTop) {
+
+    backToTop.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: 0,
+            behavior: "smooth"
+
+        });
+
+    });
+
+}
+
+/*==================================================
+CONTACT FORM
+==================================================*/
+
+const contactForm = document.querySelector(".contact-form");
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", function(e) {
+
+        e.preventDefault();
+
+        const name = this.querySelector('input[type="text"]').value.trim();
+        const email = this.querySelector('input[type="email"]').value.trim();
+        const phone = this.querySelector('input[type="tel"]').value.trim();
+        const message = this.querySelector("textarea").value.trim();
+
+        if (!name || !email || !phone || !message) {
+
+            alert("Please fill in all fields.");
+
+            return;
+
+        }
+
+        alert("Thank you! Your message has been received.");
+
+        this.reset();
+
+    });
+
+}
+
+/*==================================================
+FOOTER YEAR
+==================================================*/
+
+const copyright = document.querySelector(".copyright");
+
+if (copyright) {
+
+    copyright.innerHTML =
+        `© ${new Date().getFullYear()} Good Life Commercial Agencies. All Rights Reserved.`;
+
+}
+
+/*==================================================
+PAGE READY
+==================================================*/
+
+window.addEventListener("load", () => {
+
+    console.log("Good Life Commercial Agencies website loaded successfully.");
+
+});
