@@ -370,3 +370,7 @@ RESPONSIVE
     }
 
 }
+.nav-links a.active{
+    color:var(--primary);
+    font-weight:700;
+}
