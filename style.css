@@ -353,104 +353,270 @@ SECTION 3 - HERO
 }
 
 }
-/*====================================
-SECTION 4 - FLOATING BUTTONS
-====================================*/
+
+/*=========================================
+PREMIUM FLOATING CONTACTS
+=========================================*/
 
 .floating-left,
 .floating-right{
-    position:fixed;
-    top:50%;
-    transform:translateY(-50%);
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    z-index:1000;
+
+position:fixed;
+
+top:50%;
+
+transform:translateY(-50%);
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+z-index:9999;
+
 }
 
 .floating-left{
-    left:12px;
+
+left:12px;
+
 }
 
 .floating-right{
-    right:12px;
+
+right:12px;
+
 }
 
-.float-btn,
-.social-btn{
-    width:46px;
-    height:46px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    color:#fff;
-    font-size:18px;
-    font-weight:bold;
-    box-shadow:0 6px 16px rgba(0,0,0,.25);
-    transition:.3s;
+/* LEFT */
+
+.float{
+
+display:flex;
+
+align-items:center;
+
+width:52px;
+
+height:52px;
+
+overflow:hidden;
+
+border-radius:30px;
+
+text-decoration:none;
+
+color:#fff;
+
+transition:.4s;
+
+backdrop-filter:blur(10px);
+
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+
 }
 
-.float-btn:hover,
-.social-btn:hover{
-    transform:scale(1.1);
+.float i{
+
+width:52px;
+
+text-align:center;
+
+font-size:20px;
+
 }
 
-/* Left buttons */
+.float span{
+
+white-space:nowrap;
+
+opacity:0;
+
+margin-right:18px;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.float:hover{
+
+width:180px;
+
+}
+
+.float:hover span{
+
+opacity:1;
+
+}
+
 .call{
-    background:#2563EB;
+
+background:#2563EB;
+
 }
 
 .whatsapp{
-    background:#25D366;
+
+background:#25D366;
+
+animation:pulse 2s infinite;
+
 }
 
 .email{
-    background:#FF9800;
+
+background:#FF9800;
+
 }
 
 .location{
-    background:#E53935;
+
+background:#E53935;
+
 }
 
-/* Right buttons */
+/* RIGHT */
+
+.social{
+
+width:50px;
+
+height:50px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:#fff;
+
+text-decoration:none;
+
+font-size:20px;
+
+transition:.3s;
+
+box-shadow:0 10px 20px rgba(0,0,0,.25);
+
+}
+
+.social:hover{
+
+transform:scale(1.15) rotate(8deg);
+
+}
+
 .facebook{
-    background:#1877F2;
+
+background:#1877F2;
+
 }
 
 .instagram{
-    background:#E4405F;
+
+background:linear-gradient(45deg,#833AB4,#FD1D1D,#FCAF45);
+
 }
 
 .tiktok{
-    background:#000;
+
+background:#000;
+
 }
 
 .youtube{
-    background:#FF0000;
+
+background:#FF0000;
+
 }
 
 .linkedin{
-    background:#0A66C2;
+
+background:#0A66C2;
+
 }
 
-/* Mobile */
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/* MOBILE */
+
 @media(max-width:768px){
 
-.float-btn,
-.social-btn{
-    width:40px;
-    height:40px;
-    font-size:16px;
+.float{
+
+width:46px;
+
+height:46px;
+
+}
+
+.float:hover{
+
+width:46px;
+
+}
+
+.float span{
+
+display:none;
+
+}
+
+.float i{
+
+width:46px;
+
+font-size:18px;
+
+}
+
+.social{
+
+width:44px;
+
+height:44px;
+
+font-size:18px;
+
 }
 
 .floating-left{
-    left:8px;
+
+left:8px;
+
 }
 
 .floating-right{
-    right:8px;
+
+right:8px;
+
 }
 
 }
