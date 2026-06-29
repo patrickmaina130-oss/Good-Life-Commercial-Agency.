@@ -703,6 +703,25 @@ transform:scale(1);
     display:none;
 
 }
+    .offer-badge{
+
+    display:inline-block;
+
+    margin-top:10px;
+
+    background:#E53935;
+
+    color:#fff;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    }
 
 /*==================================================
 SECTION 6 - HERO
