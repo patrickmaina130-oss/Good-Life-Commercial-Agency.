@@ -1,47 +1,93 @@
 /*==================================================
-TOP ANNOUNCEMENT BAR
+GOOD LIFE COMMERCIAL AGENCIES
+
+SECTION 1
+
+TOP BAR
 ==================================================*/
 
+/* RESET */
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:#081426;
+
+}
+
+/* TOP BAR */
+
 .top-bar{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:42px;
-    background:linear-gradient(90deg,#0b2c86,#1f4bd8,#f4b400,#0b2c86);
-    overflow:hidden;
-    z-index:9999;
-    display:flex;
-    align-items:center;
-    border-bottom:1px solid rgba(255,255,255,.15);
+
+width:100%;
+
+height:42px;
+
+background:linear-gradient(90deg,#001b4d,#0a4fb3,#d4af37,#001b4d);
+
+overflow:hidden;
+
+display:flex;
+
+align-items:center;
+
+border-bottom:1px solid rgba(255,255,255,.15);
+
 }
 
-.top-marquee{
-    display:inline-flex;
-    align-items:center;
-    white-space:nowrap;
-    animation:marquee 35s linear infinite;
-    font-size:14px;
-    font-weight:500;
-    color:#fff;
+.top-track{
+
+display:flex;
+
+align-items:center;
+
+white-space:nowrap;
+
+animation:marquee 30s linear infinite;
+
 }
 
-.top-marquee span{
-    padding:0 35px;
+.top-track:hover{
+
+animation-play-state:paused;
+
 }
 
-.top-bar:hover .top-marquee{
-    animation-play-state:paused;
+.top-track span{
+
+color:#fff;
+
+font-size:14px;
+
+font-weight:500;
+
+padding:0 35px;
+
 }
 
 @keyframes marquee{
 
-    from{
-        transform:translateX(100%);
-    }
+0%{
 
-    to{
-        transform:translateX(-100%);
-    }
+transform:translateX(100%);
+
+}
+
+100%{
+
+transform:translateX(-100%);
+
+}
 
 }
