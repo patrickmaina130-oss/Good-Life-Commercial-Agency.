@@ -1320,6 +1320,213 @@ RESPONSIVE
 
 }
 
+/*==================================================
+SECTION 5
+FEATURED TOURS CAROUSEL
+==================================================*/
+
+const tourTrack = document.querySelector(".tour-track");
+const tourCards = document.querySelectorAll(".tour-card");
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+
+let currentIndex = 0;
+let autoSlide;
+
+/*==============================
+CARD WIDTH
+==============================*/
+
+function getCardWidth() {
+
+    if (tourCards.length === 0) return 0;
+
+    const style = window.getComputedStyle(tourCards[0]);
+
+    const gap = 30;
+
+    return tourCards[0].offsetWidth + gap;
+
+}
+
+/*==============================
+UPDATE SLIDER
+==============================*/
+
+function updateSlider() {
+
+    tourTrack.style.transform =
+        `translateX(-${currentIndex * getCardWidth()}px)`;
+
+}
+
+/*==============================
+NEXT
+==============================*/
+
+function nextSlide() {
+
+    if (currentIndex >= tourCards.length - 3) {
+
+        currentIndex = 0;
+
+    } else {
+
+        currentIndex++;
+
+    }
+
+    updateSlider();
+
+}
+
+/*==============================
+PREVIOUS
+==============================*/
+
+function previousSlide() {
+
+    if (currentIndex <= 0) {
+
+        currentIndex = tourCards.length - 3;
+
+    } else {
+
+        currentIndex--;
+
+    }
+
+    updateSlider();
+
+}
+
+nextBtn.addEventListener("click", nextSlide);
+
+prevBtn.addEventListener("click", previousSlide);
+
+/*==============================
+AUTO SLIDE
+==============================*/
+
+function startSlider() {
+
+    autoSlide = setInterval(nextSlide, 3500);
+
+}
+
+function stopSlider() {
+
+    clearInterval(autoSlide);
+
+}
+
+startSlider();
+
+/*==============================
+PAUSE ON HOVER
+==============================*/
+
+const slider = document.querySelector(".tour-slider");
+
+slider.addEventListener("mouseenter", stopSlider);
+
+slider.addEventListener("mouseleave", startSlider);
+
+/*==============================
+TOUCH SWIPE
+==============================*/
+
+let startX = 0;
+
+slider.addEventListener("touchstart", (e) => {
+
+    startX = e.touches[0].clientX;
+
+});
+
+slider.addEventListener("touchend", (e) => {
+
+    let endX = e.changedTouches[0].clientX;
+
+    if (startX - endX > 60) {
+
+        nextSlide();
+
+    }
+
+    if (endX - startX > 60) {
+
+        previousSlide();
+
+    }
+
+});
+
+/*==============================
+MOUSE DRAG
+==============================*/
+
+let isDragging = false;
+let dragStart = 0;
+
+slider.addEventListener("mousedown", (e) => {
+
+    isDragging = true;
+
+    dragStart = e.clientX;
+
+});
+
+window.addEventListener("mouseup", (e) => {
+
+    if (!isDragging) return;
+
+    let dragEnd = e.clientX;
+
+    if (dragStart - dragEnd > 70) {
+
+        nextSlide();
+
+    }
+
+    if (dragEnd - dragStart > 70) {
+
+        previousSlide();
+
+    }
+
+    isDragging = false;
+
+});
+
+/*==============================
+KEYBOARD
+==============================*/
+
+document.addEventListener("keydown", (e) => {
+
+    if (e.key === "ArrowRight") {
+
+        nextSlide();
+
+    }
+
+    if (e.key === "ArrowLeft") {
+
+        previousSlide();
+
+    }
+
+});
+
+/*==============================
+RESIZE
+==============================*/
+
+window.addEventListener("resize", updateSlider);
+
+console.log("Section 5 Loaded Successfully");
+
 
 
         
