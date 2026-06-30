@@ -1083,7 +1083,6 @@ CARD
 .tour-card{
 
     min-width:340px;
-
     max-width:340px;
 
     background:#fff;
@@ -1097,6 +1096,8 @@ CARD
     transition:.4s ease;
 
     flex-shrink:0;
+
+    cursor:pointer;
 
 }
 
@@ -1128,18 +1129,20 @@ IMAGE
 
     object-fit:cover;
 
+    display:block;
+
     transition:.6s ease;
 
 }
 
-.tour-card:hover img{
+.tour-card:hover .tour-image img{
 
     transform:scale(1.08);
 
 }
 
 /*==============================
-RATING BADGE
+BADGE
 ==============================*/
 
 .tour-badge{
@@ -1163,6 +1166,16 @@ RATING BADGE
     font-weight:700;
 
     backdrop-filter:blur(8px);
+
+    transition:.35s ease;
+
+}
+
+.tour-card:hover .tour-badge{
+
+    background:#d4af37;
+
+    color:#001b4d;
 
 }
 
@@ -1201,12 +1214,21 @@ TOUR INFO
 ==============================*/
 
 .tour-info{
+
     display:flex;
+
     justify-content:space-between;
+
+    align-items:center;
+
     margin:20px 0;
+
     color:#666;
+
     font-size:14px;
+
     font-weight:500;
+
 }
 
 /*==============================
@@ -1214,20 +1236,31 @@ TOUR PRICE
 ==============================*/
 
 .tour-price{
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
-    margin-bottom:20px;
+
+    margin-bottom:22px;
+
 }
 
 .tour-price strong{
-    font-size:28px;
+
     color:#001b4d;
+
+    font-size:28px;
+
 }
 
 .tour-price small{
+
     color:#d4af37;
+
     font-weight:700;
+
 }
 
 /*==============================
@@ -1262,118 +1295,9 @@ BUTTON
 
     color:#001b4d;
 
-}
-
-/*==============================
-RESPONSIVE
-==============================*/
-
-@media(max-width:992px){
-
-    .tour-card{
-
-        min-width:300px;
-
-        max-width:300px;
-
-    }
+    transform:translateY(-3px);
 
 }
-
-@media(max-width:768px){
-
-    .tour-controls{
-
-        justify-content:center;
-
-    }
-
-    .tour-card{
-
-        min-width:280px;
-
-        max-width:280px;
-
-    }
-
-    .tour-content h3{
-
-        font-size:21px;
-
-    }
-
-}
-
-html,
-body{
-    width:100%;
-    overflow-x:hidden;
-}
-
-@media (max-width:768px){
-
-.header{
-    padding:15px 20px;
-    flex-wrap:wrap;
-    height:auto;
-}
-
-.logo-text{
-    display:none;
-}
-
-.menu-btn{
-    display:block;
-}
-
-.navbar{
-    display:none;
-    width:100%;
-    flex-direction:column;
-    gap:15px;
-    padding:20px 0;
-}
-
-.navbar.active{
-    display:flex;
-}
-
-.hero{
-    flex-direction:column;
-    text-align:center;
-    padding:50px 20px;
-}
-
-.hero-content h1{
-    font-size:2.5rem;
-}
-
-.hero-buttons,
-.hero-stats{
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-.hero-card{
-    position:relative;
-    left:0;
-    bottom:0;
-    margin-top:20px;
-}
-}
-
-.menu-btn{
-    display:none;
-}
-
-@media (max-width:768px){
-    .menu-btn{
-        display:flex;
-        justify-content:center;
-        align-items:center;
-    }
-}
-
 
 
         
