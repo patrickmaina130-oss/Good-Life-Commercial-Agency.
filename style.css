@@ -230,6 +230,49 @@ HEADER & NAVIGATION
 
 }
 
+/*==============================
+BUTTON RIPPLE EFFECT
+==============================*/
+
+.btn-primary,
+.btn-secondary{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.ripple{
+
+    position:absolute;
+
+    width:20px;
+
+    height:20px;
+
+    background:rgba(255,255,255,.6);
+
+    border-radius:50%;
+
+    transform:translate(-50%,-50%) scale(0);
+
+    animation:ripple .6s linear;
+
+}
+
+@keyframes ripple{
+
+    to{
+
+        transform:translate(-50%,-50%) scale(18);
+
+        opacity:0;
+
+    }
+
+}
+
 /*==================================================
 SECTION 2
 HEADER EFFECTS
@@ -619,6 +662,44 @@ HERO ANIMATIONS & EFFECTS
 }
 
 /*==================================================
+SCRIPT PART 3 SUPPORT
+==================================================*/
+
+.service-card{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
+
+}
+
+.service-card.show-card{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.service-card{
+
+    transform-style:preserve-3d;
+
+    will-change:transform;
+
+}
+
+.icon{
+
+    transition:transform .3s ease;
+
+}
+
+/*==================================================
 SECTION 4
 OUR SERVICES
 ==================================================*/
@@ -752,6 +833,129 @@ OUR SERVICES
     color:#001b4d;
 
 }
+
+/*==================================================
+SCRIPT PART 4 SUPPORT
+==================================================*/
+
+/* Scroll Progress */
+
+.scroll-progress{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:0;
+
+    height:4px;
+
+    background:#d4af37;
+
+    z-index:99999;
+
+    transition:width .15s linear;
+
+}
+
+/* Back To Top */
+
+.back-top{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#d4af37;
+
+    color:#001b4d;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.back-top:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.back-top.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+/* Scroll Reveal */
+
+.section-title,
+.hero-content,
+.hero-image,
+.hero-card{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1s;
+
+}
+
+.reveal{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* Page Loaded */
+
+.loaded{
+
+    animation:fadePage .6s ease;
+
+}
+
+@keyframes fadePage{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+    }
 
 
 
