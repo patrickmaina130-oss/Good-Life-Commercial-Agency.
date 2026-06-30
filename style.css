@@ -47,47 +47,33 @@ border-bottom:1px solid rgba(255,255,255,.15);
 }
 
 .top-track{
-
-display:flex;
-
-align-items:center;
-
-white-space:nowrap;
-
-animation:marquee 30s linear infinite;
-
+    display:flex;
+    width:max-content;
+    animation:marquee 25s linear infinite;
 }
 
-.top-track:hover{
-
-animation-play-state:paused;
-
+.track{
+    display:flex;
+    align-items:center;
+    white-space:nowrap;
 }
 
-.top-track span{
+.track span{
+    color:#fff;
+    font-size:14px;
+    font-weight:500;
+    padding:0 35px;
+}
 
-color:#fff;
-
-font-size:14px;
-
-font-weight:500;
-
-padding:0 35px;
-
+.top-bar:hover .top-track{
+    animation-play-state:paused;
 }
 
 @keyframes marquee{
-
-0%{
-
-transform:translateX(100%);
-
-}
-
-100%{
-
-transform:translateX(-100%);
-
-}
-
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
 }
