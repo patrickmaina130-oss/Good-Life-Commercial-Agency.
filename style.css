@@ -1080,10 +1080,15 @@ SLIDER
 CARD
 ==============================*/
 
-.tour-card{
+    .tour-card{
 
-    min-width:340px;
-    max-width:340px;
+    min-width:85%;
+
+    max-width:85%;
+
+    margin:auto;
+
+}
 
     background:#fff;
 
