@@ -1320,6 +1320,64 @@ RESPONSIVE
 
 }
 
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
+}
+
+@media (max-width:768px){
+
+.header{
+    padding:15px 20px;
+    flex-wrap:wrap;
+    height:auto;
+}
+
+.logo-text{
+    display:none;
+}
+
+.menu-btn{
+    display:block;
+}
+
+.navbar{
+    display:none;
+    width:100%;
+    flex-direction:column;
+    gap:15px;
+    padding:20px 0;
+}
+
+.navbar.active{
+    display:flex;
+}
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.hero-content h1{
+    font-size:2.5rem;
+}
+
+.hero-buttons,
+.hero-stats{
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.hero-card{
+    position:relative;
+    left:0;
+    bottom:0;
+    margin-top:20px;
+}
+}
+
 
 
 
