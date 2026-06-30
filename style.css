@@ -229,3 +229,94 @@ HEADER & NAVIGATION
     background:#001b4d;
 
 }
+
+/*==================================================
+SECTION 2
+HEADER EFFECTS
+==================================================*/
+
+.header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    backdrop-filter:blur(12px);
+
+    background:rgba(255,255,255,.95);
+
+    transition:.35s ease;
+
+}
+
+.header:hover{
+
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+
+}
+
+.navbar a{
+
+    position:relative;
+
+}
+
+.navbar a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:3px;
+
+    background:#d4af37;
+
+    transition:.35s;
+
+}
+
+.navbar a:hover::after{
+
+    width:100%;
+
+}
+
+.search-btn,
+.menu-btn{
+
+    transition:.3s;
+
+}
+
+.search-btn:hover,
+.menu-btn:hover{
+
+    background:#001b4d;
+
+    color:#fff;
+
+    transform:rotate(8deg);
+
+}
+
+.book-btn{
+
+    box-shadow:0 6px 18px rgba(212,175,55,.35);
+
+}
+
+.book-btn:hover{
+
+    transform:translateY(-3px);
+
+    }
+
+        
