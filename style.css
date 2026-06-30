@@ -1197,53 +1197,37 @@ CONTENT
 }
 
 /*==============================
-META
+TOUR INFO
 ==============================*/
 
-.tour-meta{
-
+.tour-info{
     display:flex;
-
     justify-content:space-between;
-
-    margin-bottom:22px;
-
-    color:#555;
-
+    margin:20px 0;
+    color:#666;
     font-size:14px;
-
+    font-weight:500;
 }
 
 /*==============================
-PRICE
+TOUR PRICE
 ==============================*/
 
-.tour-footer{
-
+.tour-price{
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
-    margin-bottom:22px;
-
+    margin-bottom:20px;
 }
 
-.tour-footer strong{
-
-    color:#001b4d;
-
+.tour-price strong{
     font-size:28px;
-
+    color:#001b4d;
 }
 
-.tour-footer small{
-
+.tour-price small{
     color:#d4af37;
-
     font-weight:700;
-
 }
 
 /*==============================
