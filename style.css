@@ -957,6 +957,369 @@ SCRIPT PART 4 SUPPORT
 
     }
 
+/*==================================================
+SECTION 5
+FEATURED TOURS & DESTINATIONS
+==================================================*/
+
+.featured-tours{
+
+    padding:100px 8%;
+
+    background:linear-gradient(to bottom,#f8fbff,#eef5ff);
+
+    overflow:hidden;
+
+}
+
+/*==============================
+SECTION TAG
+==============================*/
+
+.section-tag{
+
+    display:inline-block;
+
+    padding:10px 22px;
+
+    background:#d4af37;
+
+    color:#081426;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    border-radius:30px;
+
+    margin-bottom:18px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}
+
+/*==============================
+CONTROLS
+==============================*/
+
+.tour-controls{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    margin-bottom:35px;
+
+}
+
+.tour-btn{
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#001b4d;
+
+    color:#fff;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+.tour-btn:hover{
+
+    background:#d4af37;
+
+    color:#001b4d;
+
+    transform:translateY(-4px);
+
+}
+
+/*==============================
+SLIDER
+==============================*/
+
+.tour-slider{
+
+    overflow:hidden;
+
+    width:100%;
+
+    position:relative;
+
+}
+
+.tour-track{
+
+    display:flex;
+
+    gap:30px;
+
+    transition:transform .6s ease;
+
+    will-change:transform;
+
+}
+
+/*==============================
+CARD
+==============================*/
+
+.tour-card{
+
+    min-width:340px;
+
+    max-width:340px;
+
+    background:#fff;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+    transition:.4s ease;
+
+    flex-shrink:0;
+
+}
+
+.tour-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 22px 50px rgba(0,0,0,.16);
+
+}
+
+/*==============================
+IMAGE
+==============================*/
+
+.tour-image{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.tour-image img{
+
+    width:100%;
+
+    height:240px;
+
+    object-fit:cover;
+
+    transition:.6s ease;
+
+}
+
+.tour-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/*==============================
+RATING BADGE
+==============================*/
+
+.tour-badge{
+
+    position:absolute;
+
+    top:18px;
+
+    left:18px;
+
+    background:rgba(255,255,255,.95);
+
+    color:#d4af37;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    backdrop-filter:blur(8px);
+
+}
+
+/*==============================
+CONTENT
+==============================*/
+
+.tour-content{
+
+    padding:25px;
+
+}
+
+.tour-content h3{
+
+    color:#001b4d;
+
+    font-size:24px;
+
+    margin-bottom:12px;
+
+}
+
+.tour-content p{
+
+    color:#666;
+
+    line-height:1.7;
+
+    margin-bottom:18px;
+
+}
+
+/*==============================
+META
+==============================*/
+
+.tour-meta{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:22px;
+
+    color:#555;
+
+    font-size:14px;
+
+}
+
+/*==============================
+PRICE
+==============================*/
+
+.tour-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:22px;
+
+}
+
+.tour-footer strong{
+
+    color:#001b4d;
+
+    font-size:28px;
+
+}
+
+.tour-footer small{
+
+    color:#d4af37;
+
+    font-weight:700;
+
+}
+
+/*==============================
+BUTTON
+==============================*/
+
+.tour-link{
+
+    display:block;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    padding:14px;
+
+    background:#001b4d;
+
+    color:#fff;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    transition:.35s ease;
+
+}
+
+.tour-link:hover{
+
+    background:#d4af37;
+
+    color:#001b4d;
+
+}
+
+/*==============================
+RESPONSIVE
+==============================*/
+
+@media(max-width:992px){
+
+    .tour-card{
+
+        min-width:300px;
+
+        max-width:300px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .tour-controls{
+
+        justify-content:center;
+
+    }
+
+    .tour-card{
+
+        min-width:280px;
+
+        max-width:280px;
+
+    }
+
+    .tour-content h3{
+
+        font-size:21px;
+
+    }
+
+}
+
 
 
         
