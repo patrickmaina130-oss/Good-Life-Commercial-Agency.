@@ -191,7 +191,9 @@ function renderMarketplace(category) {
 
         marketSlider.innerHTML += `
 
-        <article class="service-card min-w-[340px] bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 snap-start">
+        <article
+    class="service-card min-w-[340px] bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 snap-start"
+    data-category="${currentCategory}">
 
             <div class="relative">
 
