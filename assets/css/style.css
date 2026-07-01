@@ -205,3 +205,22 @@ RESPONSIVE
     }
 
   }
+
+.category-btn{
+    padding:12px 24px;
+    border-radius:9999px;
+    background:#ffffff;
+    font-weight:600;
+    transition:.3s;
+    white-space:nowrap;
+}
+
+.category-btn:hover{
+    background:#D4AF37;
+    color:#081426;
+}
+
+.category-btn.active{
+    background:#D4AF37;
+    color:#081426;
+    }
