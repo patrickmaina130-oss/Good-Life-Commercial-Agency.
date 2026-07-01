@@ -234,3 +234,125 @@ categoryButtons.forEach(button=>{
     });
 
 });
+
+/*==================================================
+MARKETPLACE SLIDER CONTROLS
+==================================================*/
+
+const slider = document.getElementById("marketSlider");
+
+const leftBtn = document.getElementById("slideLeft");
+
+const rightBtn = document.getElementById("slideRight");
+
+const scrollAmount = 380;
+
+/* Right Arrow */
+
+if(rightBtn){
+
+rightBtn.addEventListener("click",()=>{
+
+slider.scrollBy({
+
+left:scrollAmount,
+
+behavior:"smooth"
+
+});
+
+});
+
+}
+
+/* Left Arrow */
+
+if(leftBtn){
+
+leftBtn.addEventListener("click",()=>{
+
+slider.scrollBy({
+
+left:-scrollAmount,
+
+behavior:"smooth"
+
+});
+
+});
+
+}
+/*==================================================
+AUTO SCROLL
+==================================================*/
+
+let autoSlide = setInterval(()=>{
+
+if(!slider) return;
+
+if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth-20){
+
+slider.scrollTo({
+
+left:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+else{
+
+slider.scrollBy({
+
+left:380,
+
+behavior:"smooth"
+
+});
+
+}
+
+},5000);
+/*==================================================
+PAUSE AUTO SLIDE
+==================================================*/
+
+slider.addEventListener("mouseenter",()=>{
+
+clearInterval(autoSlide);
+
+});
+
+slider.addEventListener("mouseleave",()=>{
+
+autoSlide=setInterval(()=>{
+
+if(slider.scrollLeft+slider.clientWidth>=slider.scrollWidth-20){
+
+slider.scrollTo({
+
+left:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+else{
+
+slider.scrollBy({
+
+left:380,
+
+behavior:"smooth"
+
+});
+
+}
+
+},5000);
+
+});
