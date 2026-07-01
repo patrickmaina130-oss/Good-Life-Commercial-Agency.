@@ -1,160 +1,223 @@
+"use strict";
+
 /*==================================================
-SECTION 2 : MOBILE MENU
+GOOD LIFE COMMERCIAL AGENCIES
+MAIN SCRIPT
+==================================================*/
+
+/*==================================================
+1. GLOBAL VARIABLES
+==================================================*/
+
+let currentCategory = "tours";
+let currentSlide = 0;
+let autoSlide = null;
+
+const scrollAmount = 380;
+
+/*==================================================
+2. DOM ELEMENTS
 ==================================================*/
 
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
-
-menuBtn.addEventListener("click", () => {
-
-    mobileMenu.classList.toggle("hidden");
-
-    menuBtn.textContent =
-        mobileMenu.classList.contains("hidden") ? "☰" : "✕";
-
-});
-/*==================================================
-HERO AUTO SLIDER
-==================================================*/
+const header = document.getElementById("header");
 
 const slides = document.querySelectorAll(".hero-slide");
 
 const heroTitle = document.getElementById("heroTitle");
-
 const heroDescription = document.getElementById("heroDescription");
-
 const heroPrice = document.getElementById("heroPrice");
-
 const heroKes = document.getElementById("heroKes");
-
-const heroData = [
-
-{
-title:"Explore Kenya",
-
-description:"Luxury safaris and unforgettable adventures.",
-
-usd:"USD 299",
-
-kes:"KES 38,500"
-
-},
-
-{
-title:"Luxury Hotels",
-
-description:"Book premium hotels and resorts across Kenya.",
-
-usd:"USD 120",
-
-kes:"KES 15,500"
-
-},
-
-{
-title:"Executive Vehicle Hire",
-
-description:"Comfortable self-drive and chauffeur services.",
-
-usd:"USD 80",
-
-kes:"KES 10,500"
-
-},
-
-{
-title:"Prime Real Estate",
-
-description:"Buy, rent and manage premium properties.",
-
-usd:"From USD 15,000",
-
-kes:"From KES 1.9M"
-
-}
-
-];
-
-let currentSlide = 0;
-
-function showSlide(index){
-
-slides.forEach((slide)=>{
-
-slide.classList.remove("opacity-100");
-
-slide.classList.add("opacity-0");
-
-});
-
-slides[index].classList.remove("opacity-0");
-
-slides[index].classList.add("opacity-100");
-
-heroTitle.textContent = heroData[index].title;
-
-heroDescription.textContent = heroData[index].description;
-
-heroPrice.textContent = heroData[index].usd;
-
-heroKes.textContent = heroData[index].kes;
-
-}
-
-setInterval(()=>{
-
-currentSlide++;
-
-if(currentSlide>=slides.length){
-
-currentSlide=0;
-
-}
-
-showSlide(currentSlide);
-
-},5000);
-
-/*==================================================
-MARKETPLACE RENDERER
-==================================================*/
 
 const marketSlider = document.getElementById("marketSlider");
 const categoryButtons = document.querySelectorAll(".category-btn");
 
-function renderMarketplace(category){
+const leftBtn = document.getElementById("slideLeft");
+const rightBtn = document.getElementById("slideRight");
 
-    if(!marketSlider) return;
+const quickViewModal = document.getElementById("quickViewModal");
+const closeModal = document.getElementById("closeModal");
+
+const serviceSelect = document.getElementById("serviceSelect");
+
+/*==================================================
+3. MOBILE MENU
+==================================================*/
+
+if (menuBtn && mobileMenu) {
+
+    menuBtn.addEventListener("click", () => {
+
+        mobileMenu.classList.toggle("hidden");
+
+        menuBtn.innerHTML = mobileMenu.classList.contains("hidden")
+            ? "☰"
+            : "✕";
+
+    });
+
+}
+
+/*==================================================
+4. STICKY HEADER
+==================================================*/
+
+if (header) {
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 30) {
+
+            header.classList.add(
+                "shadow-xl",
+                "backdrop-blur-md"
+            );
+
+        } else {
+
+            header.classList.remove(
+                "shadow-xl",
+                "backdrop-blur-md"
+            );
+
+        }
+
+    });
+
+}
+
+/*==================================================
+5. HERO DATA
+==================================================*/
+
+const heroData = [
+
+{
+title: "Explore Kenya",
+description: "Luxury safaris and unforgettable adventures.",
+usd: "USD 299",
+kes: "KES 38,500"
+},
+
+{
+title: "Luxury Hotels",
+description: "Book premium hotels and resorts across Kenya.",
+usd: "USD 120",
+kes: "KES 15,500"
+},
+
+{
+title: "Executive Vehicle Hire",
+description: "Comfortable self-drive and chauffeur services.",
+usd: "USD 80",
+kes: "KES 10,500"
+},
+
+{
+title: "Prime Real Estate",
+description: "Buy, rent and manage premium properties.",
+usd: "From USD 15,000",
+kes: "From KES 1.9M"
+}
+
+];
+
+/*==================================================
+6. HERO SLIDER
+==================================================*/
+
+function showSlide(index) {
+
+    if (!slides.length) return;
+
+    slides.forEach(slide => {
+
+        slide.classList.remove("opacity-100");
+        slide.classList.add("opacity-0");
+
+    });
+
+    slides[index].classList.remove("opacity-0");
+    slides[index].classList.add("opacity-100");
+
+    if (heroTitle) heroTitle.textContent = heroData[index].title;
+
+    if (heroDescription) heroDescription.textContent = heroData[index].description;
+
+    if (heroPrice) heroPrice.textContent = heroData[index].usd;
+
+    if (heroKes) heroKes.textContent = heroData[index].kes;
+
+}
+
+function startHeroSlider() {
+
+    if (!slides.length) return;
+
+    showSlide(0);
+
+    setInterval(() => {
+
+        currentSlide++;
+
+        if (currentSlide >= slides.length) {
+
+            currentSlide = 0;
+
+        }
+
+        showSlide(currentSlide);
+
+    }, 5000);
+
+}
+
+startHeroSlider();
+
+/*==================================================
+7. MARKETPLACE RENDERER
+==================================================*/
+
+function renderMarketplace(category) {
+
+    if (!marketSlider) return;
+
+    if (!marketplaceData[category]) return;
 
     marketSlider.innerHTML = "";
 
-    marketplaceData[category].forEach(item, index)=>{
+    marketplaceData[category].forEach((item, index) => {
 
         marketSlider.innerHTML += `
 
-        <article class="min-w-[340px] bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 snap-start">
+        <article class="service-card min-w-[340px] bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 snap-start">
 
-            <img
-                src="${item.image}"
-                alt="${item.title}"
-                loading="lazy"
-                class="w-full h-64 object-cover">
+            <div class="relative">
 
-            <div class="p-6">
+                <img
+                    src="${item.image}"
+                    alt="${item.title}"
+                    loading="lazy"
+                    class="w-full h-64 object-cover">
 
-                <span class="bg-gold/20 text-gold px-3 py-1 rounded-full text-sm font-semibold">
+                <span class="absolute top-4 left-4 bg-amber-500 text-white text-sm font-semibold px-4 py-2 rounded-full">
 
                     ${item.badge}
 
                 </span>
 
-                <h3 class="text-2xl font-bold text-primary mt-4">
+            </div>
+
+            <div class="p-6">
+
+                <h3 class="text-2xl font-bold text-slate-800">
 
                     ${item.title}
 
                 </h3>
 
-                <p class="text-gray-500 mt-2">
+                <p class="text-slate-500 mt-2">
 
                     📍 ${item.location}
 
@@ -168,19 +231,19 @@ function renderMarketplace(category){
 
                 <div class="mt-5">
 
-                    <p class="text-gray-400 text-sm">
+                    <p class="text-sm text-slate-400">
 
                         Estimated Price
 
                     </p>
 
-                    <h2 class="text-3xl font-bold text-gold">
+                    <h2 class="text-3xl font-bold text-amber-600">
 
                         USD ${item.priceUSD}
 
                     </h2>
 
-                    <p class="text-primary">
+                    <p class="text-slate-700">
 
                         KES ${item.priceKES}
 
@@ -190,27 +253,40 @@ function renderMarketplace(category){
 
                 <div class="flex justify-between items-center mt-6">
 
-    <div class="flex gap-4 text-xl">
+                    <div class="flex gap-3">
 
-        <button>❤️</button>
+                        <button
+                            class="favorite-btn p-2 rounded-full hover:bg-red-100 transition">
 
-        <button>🔗</button>
+                            ❤️
 
-        <button class="quick-view"
-                data-index="${index}">
-            👁
-        </button>
+                        </button>
 
-    </div>
+                        <button
+                            class="share-btn p-2 rounded-full hover:bg-blue-100 transition">
 
-    <button
-        class="bg-gold text-primary px-5 py-2 rounded-full font-bold hover:scale-105 transition">
+                            🔗
 
-        Book Now
+                        </button>
 
-    </button>
+                        <button
+                            class="quick-view p-2 rounded-full hover:bg-slate-100 transition"
+                            data-index="${index}">
 
-</div>
+                            👁
+
+                        </button>
+
+                    </div>
+
+                    <button
+                        class="book-now bg-amber-500 hover:bg-amber-600 text-white px-5 py-3 rounded-full font-semibold transition">
+
+                        Book Now
+
+                    </button>
+
+                </div>
 
             </div>
 
@@ -220,150 +296,362 @@ function renderMarketplace(category){
 
     });
 
+    attachQuickView();
+
 }
 
-/* Load Tours First */
+/*==================================================
+8. LOAD DEFAULT CATEGORY
+==================================================*/
 
-renderMarketplace("tours");
+renderMarketplace(currentCategory);
 
-/* Category Buttons */
+/*==================================================
+9. CATEGORY SWITCHER
+==================================================*/
 
-categoryButtons.forEach(button=>{
+categoryButtons.forEach(button => {
 
-    button.addEventListener("click",()=>{
+    button.addEventListener("click", () => {
 
-        categoryButtons.forEach(btn=>btn.classList.remove("active"));
+        categoryButtons.forEach(btn => {
 
-        button.classList.add("active");
+            btn.classList.remove(
+                "bg-amber-500",
+                "text-white"
+            );
+
+            btn.classList.add(
+                "bg-white",
+                "text-slate-700"
+            );
+
+        });
+
+        button.classList.remove(
+            "bg-white",
+            "text-slate-700"
+        );
+
+        button.classList.add(
+            "bg-amber-500",
+            "text-white"
+        );
 
         currentCategory = button.dataset.category;
 
         renderMarketplace(currentCategory);
-
-        attachQuickView();
 
     });
 
 });
 
 /*==================================================
-MARKETPLACE SLIDER CONTROLS
+10. MARKETPLACE SLIDER
 ==================================================*/
 
-const slider = document.getElementById("marketSlider");
+if (rightBtn && marketSlider) {
 
-const leftBtn = document.getElementById("slideLeft");
+    rightBtn.addEventListener("click", () => {
 
-const rightBtn = document.getElementById("slideRight");
+        marketSlider.scrollBy({
 
-const scrollAmount = 380;
+            left: scrollAmount,
 
-/* Right Arrow */
+            behavior: "smooth"
 
-if(rightBtn){
+        });
 
-rightBtn.addEventListener("click",()=>{
-
-slider.scrollBy({
-
-left:scrollAmount,
-
-behavior:"smooth"
-
-});
-
-});
+    });
 
 }
 
-/* Left Arrow */
+if (leftBtn && marketSlider) {
 
-if(leftBtn){
+    leftBtn.addEventListener("click", () => {
 
-leftBtn.addEventListener("click",()=>{
+        marketSlider.scrollBy({
 
-slider.scrollBy({
+            left: -scrollAmount,
 
-left:-scrollAmount,
+            behavior: "smooth"
 
-behavior:"smooth"
+        });
 
-});
-
-});
+    });
 
 }
+
 /*==================================================
-AUTO SCROLL
+11. AUTO SLIDE
 ==================================================*/
 
-let autoSlide = setInterval(()=>{
+function startMarketplaceAutoSlide() {
 
-if(!slider) return;
+    if (!marketSlider) return;
 
-if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth-20){
+    autoSlide = setInterval(() => {
 
-slider.scrollTo({
+        if (
 
-left:0,
+            marketSlider.scrollLeft +
 
-behavior:"smooth"
+            marketSlider.clientWidth >=
 
-});
+            marketSlider.scrollWidth - 20
+
+        ) {
+
+            marketSlider.scrollTo({
+
+                left: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+
+        else {
+
+            marketSlider.scrollBy({
+
+                left: scrollAmount,
+
+                behavior: "smooth"
+
+            });
+
+        }
+
+    }, 5000);
 
 }
 
-else{
+startMarketplaceAutoSlide();
 
-slider.scrollBy({
-
-left:380,
-
-behavior:"smooth"
-
-});
-
-}
-
-},5000);
 /*==================================================
-PAUSE AUTO SLIDE
+12. PAUSE AUTO SLIDE
 ==================================================*/
 
-slider.addEventListener("mouseenter",()=>{
+if (marketSlider) {
 
-clearInterval(autoSlide);
+    marketSlider.addEventListener("mouseenter", () => {
 
-});
+        clearInterval(autoSlide);
 
-slider.addEventListener("mouseleave",()=>{
+    });
 
-autoSlide=setInterval(()=>{
+    marketSlider.addEventListener("mouseleave", () => {
 
-if(slider.scrollLeft+slider.clientWidth>=slider.scrollWidth-20){
+        startMarketplaceAutoSlide();
 
-slider.scrollTo({
+    });
 
-left:0,
+    }
+/*==================================================
+13. QUICK VIEW MODAL
+==================================================*/
 
-behavior:"smooth"
+function attachQuickView() {
 
-});
+    const quickViewButtons = document.querySelectorAll(".quick-view");
+
+    quickViewButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const index = Number(button.dataset.index);
+
+            const item = marketplaceData[currentCategory][index];
+
+            if (!item || !quickViewModal) return;
+
+            document.getElementById("modalImage").src = item.image;
+            document.getElementById("modalImage").alt = item.title;
+
+            document.getElementById("modalBadge").textContent = item.badge;
+
+            document.getElementById("modalTitle").textContent = item.title;
+
+            document.getElementById("modalLocation").textContent =
+                "📍 " + item.location;
+
+            document.getElementById("modalRating").textContent =
+                "⭐ " + item.rating;
+
+            document.getElementById("modalPrice").textContent =
+                "USD " + item.priceUSD;
+
+            document.getElementById("modalKes").textContent =
+                "KES " + item.priceKES;
+
+            quickViewModal.classList.remove("hidden");
+            quickViewModal.classList.add("flex");
+
+            document.body.classList.add("overflow-hidden");
+
+        });
+
+    });
 
 }
 
-else{
+/*==================================================
+14. CLOSE QUICK VIEW
+==================================================*/
 
-slider.scrollBy({
+if (closeModal) {
 
-left:380,
+    closeModal.addEventListener("click", () => {
 
-behavior:"smooth"
+        quickViewModal.classList.add("hidden");
 
-});
+        quickViewModal.classList.remove("flex");
+
+        document.body.classList.remove("overflow-hidden");
+
+    });
 
 }
 
-},5000);
+if (quickViewModal) {
 
-});
+    quickViewModal.addEventListener("click", (event) => {
+
+        if (event.target === quickViewModal) {
+
+            quickViewModal.classList.add("hidden");
+
+            quickViewModal.classList.remove("flex");
+
+            document.body.classList.remove("overflow-hidden");
+
+        }
+
+    });
+
+}
+
+/*==================================================
+15. SMART SERVICE FILTER
+==================================================*/
+
+if (serviceSelect) {
+
+    serviceSelect.addEventListener("change", function () {
+
+        const selected = this.value;
+
+        const cards = document.querySelectorAll(".service-card");
+
+        cards.forEach(card => {
+
+            if (
+
+                selected === "all" ||
+
+                card.dataset.category === selected
+
+            ) {
+
+                card.classList.remove("hidden");
+
+            }
+
+            else {
+
+                card.classList.add("hidden");
+
+            }
+
+        });
+
+    });
+
+}
+
+/*==================================================
+16. BOOK NOW
+==================================================*/
+
+function attachBookButtons() {
+
+    document.querySelectorAll(".book-now").forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            alert(
+                "Booking system will be connected in Phase 2."
+            );
+
+        });
+
+    });
+
+}
+
+attachBookButtons();
+
+/*==================================================
+17. SHARE
+==================================================*/
+
+function attachShareButtons() {
+
+    document.querySelectorAll(".share-btn").forEach(button => {
+
+        button.addEventListener("click", async () => {
+
+            if (navigator.share) {
+
+                try {
+
+                    await navigator.share({
+
+                        title: document.title,
+
+                        text: "Check out Good Life Commercial Agencies",
+
+                        url: window.location.href
+
+                    });
+
+                }
+
+                catch (error) {
+
+                    console.log(error);
+
+                }
+
+            }
+
+        });
+
+    });
+
+}
+
+attachShareButtons();
+
+/*==================================================
+18. FAVORITES
+==================================================*/
+
+function attachFavoriteButtons() {
+
+    document.querySelectorAll(".favorite-btn").forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            button.classList.toggle("text-red-500");
+            button.classList.toggle("scale-125");
+
+        });
+
+    });
+
+}
+
+attachFavoriteButtons();
