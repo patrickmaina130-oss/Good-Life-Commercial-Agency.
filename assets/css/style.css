@@ -224,3 +224,16 @@ RESPONSIVE
     background:#D4AF37;
     color:#081426;
     }
+/* Hide Scroll Bar */
+
+#marketSlider{
+
+scrollbar-width:none;
+
+}
+
+#marketSlider::-webkit-scrollbar{
+
+display:none;
+
+}
