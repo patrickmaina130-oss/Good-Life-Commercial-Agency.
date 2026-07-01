@@ -299,6 +299,9 @@ function renderMarketplace(category) {
     });
 
     attachQuickView();
+attachBookButtons();
+attachFavoriteButtons();
+attachShareButtons();
 
 }
 
