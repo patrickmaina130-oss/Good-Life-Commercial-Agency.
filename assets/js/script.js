@@ -236,7 +236,11 @@ categoryButtons.forEach(button=>{
 
         button.classList.add("active");
 
-        renderMarketplace(button.dataset.category);
+        currentCategory = button.dataset.category;
+
+        renderMarketplace(currentCategory);
+
+        attachQuickView();
 
     });
 
