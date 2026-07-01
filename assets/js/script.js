@@ -309,7 +309,7 @@ attachShareButtons();
 8. LOAD DEFAULT CATEGORY
 ==================================================*/
 
-renderMarketplace(currentCategory);
+
 
 /*==================================================
 9. CATEGORY SWITCHER
