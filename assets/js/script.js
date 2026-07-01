@@ -655,3 +655,160 @@ function attachFavoriteButtons() {
 }
 
 attachFavoriteButtons();
+/*==================================================
+19. BACK TO TOP
+==================================================*/
+
+const backToTop = document.getElementById("backToTop");
+
+if (backToTop) {
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 500) {
+
+            backToTop.classList.remove("hidden");
+
+        } else {
+
+            backToTop.classList.add("hidden");
+
+        }
+
+    });
+
+    backToTop.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    });
+
+}
+
+/*==================================================
+20. SCROLL REVEAL ANIMATION
+==================================================*/
+
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.remove("opacity-0");
+                entry.target.classList.remove("translate-y-10");
+
+                entry.target.classList.add("opacity-100");
+                entry.target.classList.add("translate-y-0");
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    }, {
+
+        threshold: 0.15
+
+    });
+
+    revealElements.forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+}
+
+/*==================================================
+21. ESC KEY CLOSE MODAL
+==================================================*/
+
+document.addEventListener("keydown", (event) => {
+
+    if (
+
+        event.key === "Escape" &&
+
+        quickViewModal &&
+
+        quickViewModal.classList.contains("flex")
+
+    ) {
+
+        quickViewModal.classList.add("hidden");
+
+        quickViewModal.classList.remove("flex");
+
+        document.body.classList.remove("overflow-hidden");
+
+    }
+
+});
+
+/*==================================================
+22. LAZY IMAGE FALLBACK
+==================================================*/
+
+document.querySelectorAll("img").forEach(image => {
+
+    image.addEventListener("error", () => {
+
+        image.src =
+        "https://placehold.co/800x600?text=Image+Unavailable";
+
+    });
+
+});
+
+/*==================================================
+23. FUTURE FIREBASE INITIALIZATION
+==================================================*/
+
+// Firebase configuration will be added
+// during Phase 2.
+
+/*==================================================
+24. FUTURE MPESA INITIALIZATION
+==================================================*/
+
+// MPesa payment integration
+// will be added during Phase 3.
+
+/*==================================================
+25. WEBSITE INITIALIZER
+==================================================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    if (marketSlider) {
+
+        renderMarketplace(currentCategory);
+
+    }
+
+    attachQuickView();
+
+    attachBookButtons();
+
+    attachFavoriteButtons();
+
+    attachShareButtons();
+
+});
+
+/*==================================================
+END OF SCRIPT
+GOOD LIFE COMMERCIAL AGENCIES
+==================================================*/
