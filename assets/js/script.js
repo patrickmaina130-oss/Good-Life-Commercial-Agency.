@@ -190,20 +190,27 @@ function renderMarketplace(category){
 
                 <div class="flex justify-between items-center mt-6">
 
-                    <div class="flex gap-4 text-xl">
+    <div class="flex gap-4 text-xl">
 
-                        ❤️ 🔗 👁
+        <button>❤️</button>
 
-                    </div>
+        <button>🔗</button>
 
-                    <button
-                        class="bg-gold text-primary px-5 py-2 rounded-full font-bold hover:scale-105 transition">
+        <button class="quick-view"
+                data-index="${index}">
+            👁
+        </button>
 
-                        Book Now
+    </div>
 
-                    </button>
+    <button
+        class="bg-gold text-primary px-5 py-2 rounded-full font-bold hover:scale-105 transition">
 
-                </div>
+        Book Now
+
+    </button>
+
+</div>
 
             </div>
 
