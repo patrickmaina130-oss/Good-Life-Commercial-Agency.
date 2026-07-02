@@ -185,6 +185,8 @@ function renderMarketplace(category) {
     if (!marketSlider) return;
 
     if (!marketplaceData[category]) return;
+    
+    marketplaceData[category].forEach((item, index) => {
 
     marketSlider.innerHTML = "";
 
