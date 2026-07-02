@@ -802,15 +802,6 @@ document.addEventListener("DOMContentLoaded", () => {
         renderMarketplace(currentCategory);
 
     }
-
-    attachQuickView();
-
-    attachBookButtons();
-
-    attachFavoriteButtons();
-
-    attachShareButtons();
-
 });
 
 /*==================================================
