@@ -184,11 +184,11 @@ function renderMarketplace(category) {
 
     if (!marketSlider) return;
 
+    marketSlider.innerHTML = "";
+
     if (!marketplaceData[category]) return;
     
     marketplaceData[category].forEach((item, index) => {
-
-    marketSlider.innerHTML = "";
 
     marketSlider.innerHTML += `
 
