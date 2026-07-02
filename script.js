@@ -550,6 +550,32 @@ if (serviceSelect) {
 
 }
 
+if (marketSearch) {
+
+    marketSearch.addEventListener("input", function () {
+
+        const search = this.value.toLowerCase();
+
+        document.querySelectorAll(".service-card").forEach(card => {
+
+            const text = card.innerText.toLowerCase();
+
+            if (text.includes(search)) {
+
+                card.classList.remove("hidden");
+
+            } else {
+
+                card.classList.add("hidden");
+
+            }
+
+        });
+
+    });
+
+}
+
 /*==================================================
 16. BOOK NOW
 ==================================================*/
