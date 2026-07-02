@@ -271,14 +271,12 @@ Book Now
 </article>
 
 `;
-
-    });
-
-    attachQuickView();
+        attachQuickView();
 attachBookButtons();
 attachFavoriteButtons();
 attachShareButtons();
 
+    });
 }
 
 /*==================================================
