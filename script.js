@@ -40,6 +40,7 @@ const quickViewModal = document.getElementById("quickViewModal");
 const closeModal = document.getElementById("closeModal");
 
 const serviceSelect = document.getElementById("serviceSelect");
+const marketSearch = document.getElementById("marketSearch");
 
 /*==================================================
 3. MOBILE MENU
