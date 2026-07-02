@@ -187,114 +187,87 @@ function renderMarketplace(category) {
 
     marketSlider.innerHTML = "";
 
-    marketplaceData[category].forEach((item, index) => {
+    marketSlider.innerHTML += `
 
-        marketSlider.innerHTML += `
+<article class="service-card min-w-[370px] max-w-[370px] bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-500 snap-start">
 
-        <article
-    class="service-card min-w-[340px] bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 snap-start"
-    data-category="${currentCategory}">
+<div class="relative overflow-hidden">
 
-            <div class="relative">
+<img
+src="${item.image}"
+alt="${item.title}"
+class="w-full h-72 object-cover hover:scale-110 transition duration-700">
 
-                <img
-                    src="${item.image}"
-                    alt="${item.title}"
-                    loading="lazy"
-                    class="w-full h-64 object-cover">
+<span class="absolute top-4 left-4 bg-amber-500 text-white px-4 py-2 rounded-full font-bold text-sm">
+${item.badge}
+</span>
 
-                <span class="absolute top-4 left-4 bg-amber-500 text-white text-sm font-semibold px-4 py-2 rounded-full">
+<div class="absolute top-4 right-4 flex gap-2">
 
-                    ${item.badge}
+<button class="favorite-btn bg-white/90 rounded-full w-10 h-10">
+❤️
+</button>
 
-                </span>
+<button class="share-btn bg-white/90 rounded-full w-10 h-10">
+🔗
+</button>
 
-            </div>
+</div>
 
-            <div class="p-6">
+<div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur text-white px-4 py-2 rounded-xl">
 
-                <h3 class="text-2xl font-bold text-slate-800">
+⭐ ${item.rating}
 
-                    ${item.title}
+</div>
 
-                </h3>
+</div>
 
-                <p class="text-slate-500 mt-2">
+<div class="p-6">
 
-                    📍 ${item.location}
+<h3 class="text-2xl font-bold text-slate-800">
+${item.title}
+</h3>
 
-                </p>
+<p class="text-slate-500 mt-2">
+📍 ${item.location}
+</p>
 
-                <p class="mt-2 text-yellow-500">
+<div class="mt-6">
 
-                    ⭐ ${item.rating}
+<p class="text-sm text-gray-500">
+Starting From
+</p>
 
-                </p>
+<h2 class="text-3xl font-extrabold text-amber-600">
+USD ${item.priceUSD}
+</h2>
 
-                <div class="mt-5">
+<p class="text-slate-700">
+KES ${item.priceKES}
+</p>
 
-                    <p class="text-sm text-slate-400">
+</div>
 
-                        Estimated Price
+<div class="flex gap-3 mt-6">
 
-                    </p>
+<button
+class="quick-view flex-1 border-2 border-amber-500 text-amber-600 rounded-xl py-3 font-bold"
+data-index="${index}">
+Quick View
+</button>
 
-                    <h2 class="text-3xl font-bold text-amber-600">
+<button
+class="book-now flex-1 bg-amber-500 text-white rounded-xl py-3 font-bold hover:bg-amber-600">
+Book Now
+</button>
 
-                        USD ${item.priceUSD}
+</div>
 
-                    </h2>
+</div>
 
-                    <p class="text-slate-700">
+</article>
 
-                        KES ${item.priceKES}
-
-                    </p>
-
-                </div>
-
-                <div class="flex justify-between items-center mt-6">
-
-                    <div class="flex gap-3">
-
-                        <button
-                            class="favorite-btn p-2 rounded-full hover:bg-red-100 transition">
-
-                            ❤️
-
-                        </button>
-
-                        <button
-                            class="share-btn p-2 rounded-full hover:bg-blue-100 transition">
-
-                            🔗
-
-                        </button>
-
-                        <button
-                            class="quick-view p-2 rounded-full hover:bg-slate-100 transition"
-                            data-index="${index}">
-
-                            👁
-
-                        </button>
-
-                    </div>
-
-                    <button
-                        class="book-now bg-amber-500 hover:bg-amber-600 text-white px-5 py-3 rounded-full font-semibold transition">
-
-                        Book Now
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-        `;
+`;
 
     });
 
