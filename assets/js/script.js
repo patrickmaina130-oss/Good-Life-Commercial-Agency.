@@ -177,6 +177,36 @@ function startHeroSlider() {
 startHeroSlider();
 
 /*==================================================
+6.5 MARKETPLACE DATA
+==================================================*/
+const marketplaceData = {
+    tours: [
+        {
+            title: "Maasai Mara Safari",
+            location: "Narok, Kenya",
+            image: "assets/images/tours/mara.jpg",
+            badge: "Popular",
+            rating: "4.9",
+            priceUSD: "500",
+            priceKES: "65,000"
+        }
+    ],
+    hotels: [
+        {
+            title: "Coastal Luxury Resort",
+            location: "Diani, Kenya",
+            image: "assets/images/hotels/diani.jpg",
+            badge: "Luxury",
+            rating: "4.8",
+            priceUSD: "150",
+            priceKES: "19,500"
+        }
+    ]
+    // Add other categories like vehicles, realestate, etc., here...
+};
+
+
+/*==================================================
 7. MARKETPLACE RENDERER
 ==================================================*/
 
